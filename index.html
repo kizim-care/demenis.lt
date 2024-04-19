@@ -10,12 +10,25 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=system-ui|system-ui">
         <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+            @layer utilities {
+                .container {
+                    @apply px-5;
+                }
+                .bg-purple-blue-500 {
+                    @apply bg-indigo-500;
+                }
+                .bg-purple-blue-600 {
+                    @apply bg-indigo-600;
+                }
+            }
+        </style>
     </head>
-    <body class="font-body ">
-        <div style="background-color:#f8f9fa;">
-            <div class="container flex flex-col mx-auto" style="padding-bottom:100px;">
-                <div class="relative flex flex-wrap items-center justify-between w-full bg-white group py-7 shrink-0" id="pradzia">
-                    <div style="margin-right:30px;" id="pradzia">
+    <body class="font-body">
+        <div>
+            <div class="container flex flex-col mx-auto">
+                <div class="relative flex gap-5 flex-wrap items-center justify-between w-full bg-white group py-7 shrink-0" id="pradzia">
+                    <div id="pradzia">
                         <a href="#pradzia">
                             <img class="h-8" src="https://loopple.s3.eu-west-3.amazonaws.com/images/H9NaypoxCAHej91lMgVOwKQhkmgtwAqFGpwevfJz.svg">
                         </a>
@@ -28,7 +41,7 @@
                         <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#masazu-kaina">Kaina</a>
                         <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#klausimai">Klausimai</a>
                     </div>
-                    <div class="items-center hidden gap-8 md:flex" style="margin-left:20px;">
+                    <div class="items-center hidden gap-8 md:flex">
                         <a href="#uzklausa-kokio-masazo-reikia">
                             <button class="flex items-center py-4 text-sm font-medium px-7 text-dark-grey-700 hover:text-dark-grey-900 transition duration-300 rounded-2xl">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2">
@@ -46,23 +59,25 @@
                             <path d="M3 8H21C21.2652 8 21.5196 7.89464 21.7071 7.70711C21.8946 7.51957 22 7.26522 22 7C22 6.73478 21.8946 6.48043 21.7071 6.29289C21.5196 6.10536 21.2652 6 21 6H3C2.73478 6 2.48043 6.10536 2.29289 6.29289C2.10536 6.48043 2 6.73478 2 7C2 7.26522 2.10536 7.51957 2.29289 7.70711C2.48043 7.89464 2.73478 8 3 8ZM21 16H3C2.73478 16 2.48043 16.1054 2.29289 16.2929C2.10536 16.4804 2 16.7348 2 17C2 17.2652 2.10536 17.5196 2.29289 17.7071C2.48043 17.8946 2.73478 18 3 18H21C21.2652 18 21.5196 17.8946 21.7071 17.7071C21.8946 17.5196 22 17.2652 22 17C22 16.7348 21.8946 16.4804 21.7071 16.2929C21.5196 16.1054 21.2652 16 21 16ZM21 11H3C2.73478 11 2.48043 11.1054 2.29289 11.2929C2.10536 11.4804 2 11.7348 2 12C2 12.2652 2.10536 12.5196 2.29289 12.7071C2.48043 12.8946 2.73478 13 3 13H21C21.2652 13 21.5196 12.8946 21.7071 12.7071C21.8946 12.5196 22 12.2652 22 12C22 11.7348 21.8946 11.4804 21.7071 11.2929C21.5196 11.1054 21.2652 11 21 11Z" fill="black"></path>
                         </svg>
                     </button>
-                    <div class="absolute flex md:hidden transition-all duration-300 ease-in-out flex-col items-start shadow-main justify-center w-full gap-3 overflow-hidden bg-white max-h-0 group-[.open]:py-4 px-4 rounded-2xl group-[.open]:max-h-64 top-full">
-                        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#pradzia">Į pradžią</a>
-                        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#apie-masazuotoja">Apie masažuotoją</a>
-                        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#apie-masazus">Apie masažą</a>
-                        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#klientai-ir-atsiliepimai">Atsiliepimai</a>
-                        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#masazu-kaina">Kaina</a>
-                        <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#klausimai">Klausimai</a>
-                        <a href="#uzklausa-kokio-masazo-reikia">
-                            <button class="flex items-center text-sm font-normal text-black">Palikti užklausą</button>
-                        </a>
-                        <a href="#uzsakymo-forma">
-                            <button class="flex items-center px-4 py-2 text-sm font-bold text-white rounded-xl bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 
-                focus:ring-purple-blue-100 transition duration-300 rounded-xl">Registruotis masažui</button>
-                        </a>
+                    <div class="absolute flex md:hidden transition-all duration-300 ease-in-out flex-col items-start shadow-main justify-center w-full gap-3 overflow-hidden bg-white max-h-0 group-[.open]:py-6 px-4 group-[.open]:max-h-80 top-full">
+                        <div class="flex flex-col items-start mb-6 gap-3">
+                            <a class="text font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#pradzia">Į pradžią</a>
+                            <a class="text font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#apie-masazuotoja">Apie masažuotoją</a>
+                            <a class="text font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#apie-masazus">Apie masažą</a>
+                            <a class="text font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#klientai-ir-atsiliepimai">Atsiliepimai</a>
+                            <a class="text font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#masazu-kaina">Kaina</a>
+                            <a class="text font-normal text-dark-grey-700 hover:text-dark-grey-900" href="#klausimai">Klausimai</a>
+                            <a href="#uzklausa-kokio-masazo-reikia">
+                                <button class="flex items-center text font-normal text-black">Palikti užklausą</button>
+                            </a>
+                            <a href="#uzsakymo-forma">
+                                <button class="flex items-center px-4 py-2 text-sm font-bold text-white rounded-xl bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 
+                    focus:ring-purple-blue-100 transition duration-300 rounded-xl">Registruotis masažui</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="grid w-full grid-cols-1 my-auto mt-12 mb-8 md:grid-cols-2 xl:gap-14 md:gap-5">
+                <div class="grid w-full grid-cols-1 my-auto mt-12 mb-8 md:grid-cols-2 xl:gap-14 gap-10 md:gap-5">
                     <div class="flex flex-col justify-center col-span-1 text-center lg:text-start">
                         <div class="flex items-center justify-center mb-4 lg:justify-normal">
                             <img class="h-5" src="https://loopple.s3.eu-west-3.amazonaws.com/images/yMOCSkCMCASrD2X6KO56rZeBfpWlGvE0EGLNKRxL.png" alt="logo" style="margin-right: 5px;">
@@ -85,8 +100,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="items-center justify-end hidden col-span-1 md:flex">
-                        <img class="w-4/5 rounded-md" src="https://loopple.s3.eu-west-3.amazonaws.com/images/Q2yYVA4sXCM0BOipqSAPs0tFfnUyDxnDtzfVSz7w.png" alt="header image">
+                    <div class="items-center justify-end col-span-1 flex">
+                        <img class="rounded-md max-w-[590px] w-full" src="https://loopple.s3.eu-west-3.amazonaws.com/images/Q2yYVA4sXCM0BOipqSAPs0tFfnUyDxnDtzfVSz7w.png" alt="header image">
                     </div>
                 </div>
             </div>
@@ -326,11 +341,6 @@
                     </div>
                 </div>
             </div>
-    
-    
-    
-    
-    
         </div>
         <div class="mx-auto lg:container">
             <div class="flex flex-col items-center justify-center">
@@ -492,14 +502,12 @@
     
     
     
-        <div class="w-full" style="background-color:#f8f9fa; padding-top:70px; padding-bottom:100px;" id="uzklausa-kokiai-kuno-vietai-reikia-masazo">
-    
-            <div class="flex flex-col items-center justify-center mt-12">
-                <h2 class="mb-4 text-3xl font-extrabold leading-tight text-center lg:text-4xl text-dark-grey-900 font-display">Kokiai kūno vietai masažo reikia Jūsų atveju?</h2>
-                <p class="text-lg text-center lg:w-7/12 text-grey-700">Gaukite mūsų skambutį Jums patogiu metu •&nbsp;Darbo laiku nuo 09:00 iki 18:00 •&nbsp;Darbo dienomis nuo pirmadienio iki penktadienio</p>
-            </div>
-    
-            <div class="container flex flex-col items-left gap-16 mx-auto sm:w-1/2 md:flex-row" style="padding-top:80px;">
+        <div class="w-full py-28" style="background-color:#f8f9fa;" id="uzklausa-kokiai-kuno-vietai-reikia-masazo">
+            <div class="container flex flex-col items-left gap-16 mx-auto sm:w-1/2 md:flex-row">
+                <div class="flex flex-col items-center justify-center">
+                    <h2 class="mb-4 text-3xl font-extrabold leading-tight text-center lg:text-4xl text-dark-grey-900 font-display">Kokiai kūno vietai masažo reikia Jūsų atveju?</h2>
+                    <p class="text-lg text-center lg:w-7/12 text-grey-700">Gaukite mūsų skambutį Jums patogiu metu •&nbsp;Darbo laiku nuo 09:00 iki 18:00 •&nbsp;Darbo dienomis nuo pirmadienio iki penktadienio</p>
+                </div>
     
                 <div class="flex flex-col items-left justify-between">
                     <div class="flex items-center gap-4">
@@ -602,7 +610,7 @@
                 </div>
             </div>
         </div>
-        <div class="relative flex flex-col justify-center min-h-screen" id="klientai-ir-atsiliepimai">
+        <div class="relative flex flex-col justify-center min-h-screen overflow-hidden" id="klientai-ir-atsiliepimai">
             <div class="absolute block w-screen h-screen overflow-hidden">
                 <div class="absolute inline-block transition-all duration-300 ease-in-out -translate-y-20 rounded-full cursor-pointer -z-10 top-1/4 left-4 shrink-0">
                     <img alt="Pic" class="w-[40px] h-[40px] object-cover rounded-full inline-block shrink-0" src="https://loopple.s3.eu-west-3.amazonaws.com/images/XPlNaHYaDC6bvh1ULAbH5iPsJeAlywg2lhwcoN07.jpg">
@@ -635,7 +643,7 @@
                     <img alt="Pic" class="w-[72px] h-[72px] object-cover rounded-full inline-block shrink-0" src="https://loopple.s3.eu-west-3.amazonaws.com/images/vg6bnP2jVJijbvm6jhuvqEx8YPPgBcSbTv6wcWST.jpg">
                 </div>
             </div>
-            <div class="w-full h-full">
+            <div class="w-full h-full relative z-10">
                 <div class="container z-30 flex flex-col items-center gap-16 mx-auto my-auto">
                     <div class="flex flex-col gap-10 min-h-[120px] items-center justify-center">
                         <div class="flex flex-row items-center justify-center drop-shadow-main will-change-auto">
@@ -666,14 +674,14 @@
                 </div>
             </div>
         </div>
-        <div class="w-full">
-            <div class="container flex flex-col mx-auto my-32 gap-14">
+        <div class="w-full py-24 my-24" style="background-color:#f8f9fa;">
+            <div class="container flex flex-col mx-auto gap-14">
                 <div class="flex flex-col items-center w-full text-center">
                     <h2 class="mb-6 text-4xl font-extrabold leading-tight md:text-5xl text-dark-grey-900 font-display">Garsių kolegų rekomendacijos</h2>
                     <p class="text-lg font-normal md:w-7/12 text-dark-grey-500">Deimantą Demenį rekomenduoja buvę garsūs kolegos ir darbdaviai su garbinga reputacija</p>
                 </div>
                 <div class="grid w-full grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-                    <div class="flex flex-col items-center gap-4 p-6 rounded-3xl bg-grey-200">
+                    <div class="flex flex-col items-center gap-4 p-6 bg-white rounded-3xl bg-grey-200">
                         <div class="w-24 h-24 rounded-full bg-cover bg-center" style="background-image: url(https://loopple.s3.eu-west-3.amazonaws.com/images/0NjCQqLG6JiFHKJn6T4vb8I8pR344PWbdumaD3lW.webp);"></div>
                         <div class="flex flex-col items-center">
                             <h3 class="text-xl font-extrabold leading-normal text-center text-dark-grey-900 font-display">Arvydas Sabonis</h3>
@@ -688,28 +696,28 @@
                         </div>
     
                     </div>
-                    <div class="flex flex-col items-center gap-4 p-6 rounded-3xl bg-grey-200">
+                    <div class="flex flex-col items-center gap-4 p-6 bg-white rounded-3xl bg-grey-200">
                         <div class="w-24 h-24 rounded-full bg-cover bg-center" style="background-image: url('https://loopple.s3.eu-west-3.amazonaws.com/images/QOzxzi1GV9jTEpVLB1XB3aogOz2RjqvgdCW4ItvZ.webp')"></div>
                         <div class="flex flex-col items-center">
                             <h3 class="text-xl font-extrabold leading-normal text-center text-dark-grey-900 font-display">Aleksandras Kosauskas</h3>
                             <p class="text-lg font-bold text-center text-dark-grey-500">Ilgametis „Žalgirio“ fizinio parengimo treneris</p>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center gap-4 p-6 rounded-3xl bg-white-200">
+                    <div class="flex flex-col items-center gap-4 p-6 bg-white rounded-3xl bg-white-200">
                         <div class="w-24 h-24 rounded-full bg-cover bg-center" style="background-image: url('https://loopple.s3.eu-west-3.amazonaws.com/images/q1S74s3UsSQoeQ6AKmeHsycSQIg5XuEKbxhv4oMf.webp')"></div>
                         <div class="flex flex-col items-center">
                             <h3 class="text-xl font-extrabold leading-normal text-center text-dark-grey-900 font-display">Antanas Sireika</h3>
                             <p class="text-lg font-bold text-center text-dark-grey-500">Žinomas ir tituluotas Lietuvos krepšinio treneris</p>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center gap-4 p-6 rounded-3xl bg-grey-200">
+                    <div class="flex flex-col items-center gap-4 p-6 bg-white rounded-3xl bg-grey-200">
                         <div class="w-24 h-24 rounded-full bg-cover bg-center" style="background-image: url('https://loopple.s3.eu-west-3.amazonaws.com/images/x3qqnIHBIphaB28vIziq3QGNdhTKFx6Yrot2it5C.webp')"></div>
                         <div class="flex flex-col items-center">
                             <h3 class="text-xl font-extrabold leading-normal text-center text-dark-grey-900 font-display">Robertas Narkus</h3>
                             <p class="text-lg font-bold text-center text-dark-grey-500">Ilgametis „Žalgirio” ir Lietuvos vyrų krepšinio rinktinės sporto medicinos gydytojas</p>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center gap-4 p-6 rounded-3xl bg-white-200">
+                    <div class="flex flex-col items-center gap-4 p-6 bg-white rounded-3xl bg-white-200">
                         <div class="w-24 h-24 rounded-full bg-cover bg-center" style="background-image: url('https://loopple.s3.eu-west-3.amazonaws.com/images/GGzfsiGHK47rGuVRgov1mGsi8xA4flSpyPQgstEd.webp')"></div>
                         <div class="flex flex-col items-center">
                             <h3 class="text-xl font-extrabold leading-normal text-center text-dark-grey-900 font-display">Žydrūnas Savickas</h3>
