@@ -1,4 +1,4 @@
-name: Build Eleventy
+name: Build and Deploy
 
 on:
   push:
@@ -6,31 +6,28 @@ on:
       - main
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-20.04
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
 
       - name: Install dependencies & build
         run: |
           npm install
           npm run build
           npm run build:css
-          
-       - name: Copy output.css to _site directory
+
+      - name: Copy output.css to _site directory
         run: cp src/css/output.css _site/css/
 
-      - name: Deploy 🚀
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./_site
