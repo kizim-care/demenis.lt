@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx eleventy --serve",
+    "start": "npm-run-all -p eleventy tailwind",
+    "eleventy": "npx eleventy --serve",
+    "tailwind": "npx tailwindcss -i ./resources/css/global.css -o ./src/css/output.css --watch",
     "build": "npx @11ty/eleventy",
-    "watch:css": "npx tailwindcss -i ./src/css/global.css -o ./src/css/output.css --watch"
+    "build:css": "npx tailwindcss -i ./resources/css/global.css -o ./src/css/output.css"
   },
   "keywords": [],
   "author": "",
