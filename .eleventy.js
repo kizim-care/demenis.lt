@@ -10,9 +10,9 @@ module.exports = function (eleventyConfig) {
       includes: "_includes",
       output: "_site",
     },
-    templateFormats: ["md", "njk", "html"],
-    markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
+    templateFormats: ["md", "liquid", "html"],
+    markdownTemplateEngine: "liquid",
+    htmlTemplateEngine: "liquid",
+    dataTemplateEngine: "liquid",
   };
 };
