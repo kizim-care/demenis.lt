@@ -1,0 +1,39 @@
+<? let brandIcons = [
+    {
+        img: 'https://loopple.s3.eu-west-3.amazonaws.com/images/oZSyMNLDtR2XQMI5fEJJC29nNdr9JLDCUvBu1a1f.svg',
+        alt: '15 minuciu apie Deimanta Demeni',
+    },
+    {
+        img: 'https://loopple.s3.eu-west-3.amazonaws.com/images/KpG6eb70kycMBTV584Z3FZe8LpkLm1ozXoM4av4O.svg',
+        alt: 'Klientai ir atsiliepimai apie Deimanta Demeni',
+    },
+    {
+        img: 'https://loopple.s3.eu-west-3.amazonaws.com/images/ACjGfkzFLPQeQnA4dE0cSeI9rclDgy3cBfQfzwdS.svg',
+        alt: 'Klientai ir atsiliepimai apie Deimanta Demeni',
+    },
+    {
+        img: 'https://loopple.s3.eu-west-3.amazonaws.com/images/MiQqopSzaYFoXcVfzY6epJ0AWZlA0OdfPZriHAMH.svg',
+        alt: 'Deimanto Demenio kvalifikacija',
+    },
+]; ?>
+
+<div class="w-full">
+    <div class="container flex flex-col items-center gap-8 mx-auto my-32" id="patirtis-ir-istorija">
+        <h2 class="text-2xl lg:text-4xl font-extrabold leading-tight text-center text-dark-grey-900 font-display">
+            Ilgametė masažavimo patirtis ir istorija
+        </h2>
+        <p class="text-base font-medium leading-7 text-center text-dark-grey-600">
+            Masažai atliekami pagal unikalią Deimanto Demenio metodiką su 25 metų
+            tobulinimo istorija
+        </p>
+        <div class="flex flex-wrap items-center xl:justify-between justify-center w-full gap-8 xl:flex-nowrap opacity-70">
+            <? brandIcons.forEach(function(icon){ ?>
+                <div class="bg-grey-200 rounded-2xl max-w-60 xl:max-w-72">
+                    <a href="#interviu">
+                        <img src="<?- icon.img ?>" alt="<?- icon.alt ?>" />
+                    </a>
+                </div>
+            <? }); ?>
+        </div>
+    </div>
+</div>
