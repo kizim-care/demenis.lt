@@ -1,0 +1,69 @@
+<div class="w-full bg-[#f8f9fa]" id="uzklausa-kokio-masazo-reikia">
+    <div class="container h-full w-full py-40">
+        <div class="flex flex-col items-center justify-center mb-20 gap-8 text-center">
+            <?-
+                include('./single/h2.ejs', {text: title});
+            ?>
+
+            <p class="text-grey-700 text-base lg:text-lg lg:w-7/12">Gaukite mūsų skambutį Jums patogiu metu • Darbo laiku nuo 09:00 iki 18:00 • Darbo dienomis nuo pirmadienio iki penktadienio</p>
+        </div>
+
+        <div class="items-left mx-auto flex flex-col gap-16 max-w-4xl md:flex-row">
+            <div class="items-left flex flex-col justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="bg-purple-blue-500 flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
+                        <span class="text-base font-bold leading-7 text-white">1</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-dark-grey-600 text-base font-medium leading-7">Palikite savo telefono numerį, į kurį mes galėtume Jums paskambinti</p>
+                    </div>
+                </div>
+                <div class="items-left border-purple-blue-500 flex h-10 w-6 justify-center self-start border-r-2"></div>
+                <div class="flex items-center gap-4">
+                    <div class="text-purple-blue-500 border-purple-blue-500 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-solid bg-transparent">
+                        <span class="text-base font-bold leading-7">2</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-dark-grey-600 text-base font-medium leading-7">Nurodykite patogų skambučio laiką, kad mes skambintume Jums patogiu metu</p>
+                    </div>
+                </div>
+                <div class="items-left border-dark-grey-500 flex h-10 w-6 justify-center self-start border-r-2"></div>
+                <div class="flex items-center gap-4">
+                    <div class="text-purple-blue-500 border-purple-blue-500 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-solid bg-transparent">
+                        <span class="text-base font-bold leading-7">3</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-dark-grey-600 text-base font-medium leading-7">Aptarsime kokio masažo reikia, atsakysime į rūpimus klausimus, užregistruosime vizitui</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-main w-full flex-col items-start justify-center gap-y-6 rounded-3xl bg-white p-6 lg:p-10 text-start">
+                <div class="flex flex-col gap-1 mb-4">
+                    <h4 class="text-dark-grey-900 font-display text-xl lg:text-2xl font-bold">Mes Jums perskambinsime</h4>
+                    <p class="text-dark-grey-500 text-base font-normal">Tereikia užpildyti formą</p>
+                </div>
+                <div class="flex w-full flex-col gap-4">
+                    <div class="relative flex w-full items-center">
+                        <span class="absolute ml-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25 25" fill="none">
+                                <path d="M19.41 13.7027C19.1901 13.7027 18.96 13.6308 18.74 13.5795C18.2949 13.4772 17.8572 13.3434 17.43 13.1789C16.9661 13.0056 16.4562 13.0146 15.9984 13.2042C15.5405 13.3938 15.1671 13.7506 14.95 14.2059L14.73 14.6784C13.7589 14.1127 12.8617 13.4225 12.0601 12.6243C11.2829 11.801 10.6108 10.8796 10.0601 9.88216L10.5201 9.66648C10.9634 9.44353 11.3108 9.06006 11.4954 8.58984C11.6801 8.11963 11.6888 7.59591 11.5201 7.11946C11.3612 6.67684 11.231 6.22397 11.13 5.76378C11.08 5.53784 11.04 5.30162 11.01 5.07567C10.8886 4.35226 10.5197 3.69714 9.96967 3.2283C9.41967 2.75946 8.72475 2.5077 8.01005 2.51838H5.00005C4.5773 2.51781 4.1592 2.60901 3.77317 2.786C3.38714 2.963 3.04189 3.22178 2.76005 3.5454C2.47237 3.8778 2.25817 4.27023 2.13215 4.69571C2.00614 5.12119 1.97131 5.56965 2.03005 6.01027C2.57364 10.2849 4.47526 14.2559 7.44005 17.3076C10.4114 20.3525 14.2779 22.3055 18.4401 22.8638C18.5699 22.874 18.7002 22.874 18.83 22.8638C19.5675 22.8649 20.2794 22.587 20.83 22.0832C21.1452 21.7938 21.3971 21.4392 21.5695 21.0427C21.7418 20.6463 21.8306 20.2169 21.83 19.7827V16.7016C21.8247 15.992 21.5809 15.306 21.14 14.7596C20.6991 14.2132 20.088 13.8399 19.41 13.7027ZM19.9 19.8649C19.8997 20.0082 19.8702 20.1498 19.8134 20.2807C19.7565 20.4116 19.6736 20.5288 19.57 20.6249C19.4604 20.7274 19.33 20.8037 19.1882 20.8481C19.0464 20.8925 18.8967 20.9039 18.75 20.8816C15.0183 20.3811 11.5503 18.6345 8.88005 15.9108C6.20752 13.166 4.49208 9.59189 4.00005 5.74324C3.97833 5.59261 3.98949 5.43891 4.03272 5.29325C4.07596 5.1476 4.1502 5.01364 4.25005 4.90108C4.34467 4.7934 4.46043 4.70752 4.5897 4.6491C4.71897 4.59069 4.85882 4.56106 5.00005 4.56216H8.00005C8.23121 4.55636 8.45719 4.63301 8.63951 4.77907C8.82184 4.92513 8.94925 5.13156 9.00005 5.36324C9.00005 5.64054 9.09005 5.92811 9.15005 6.2054C9.26563 6.74342 9.41937 7.27204 9.61005 7.78702L8.21005 8.46486C7.96941 8.57831 7.78241 8.78514 7.69005 9.04C7.59003 9.29004 7.59003 9.5705 7.69005 9.82054C9.12925 12.9866 11.6073 15.5316 14.69 17.0097C14.9335 17.1124 15.2066 17.1124 15.45 17.0097C15.6982 16.9149 15.8996 16.7228 16.01 16.4757L16.64 15.0378C17.156 15.231 17.6838 15.3889 18.22 15.5103C18.48 15.5719 18.76 15.6232 19.0301 15.6643C19.2556 15.7165 19.4566 15.8473 19.5989 16.0346C19.7411 16.2219 19.8157 16.4539 19.81 16.6913L19.9 19.8649ZM14 2.4054C13.7701 2.4054 13.53 2.4054 13.3 2.4054C13.0348 2.42856 12.7894 2.55896 12.6178 2.76794C12.4462 2.97692 12.3625 3.24734 12.385 3.51973C12.4076 3.79211 12.5346 4.04414 12.738 4.22038C12.9415 4.39661 13.2048 4.48261 13.47 4.45946H14C15.5913 4.45946 17.1175 5.10868 18.2427 6.26431C19.3679 7.41994 20 8.98731 20 10.6216C20 10.8065 20 10.9811 20 11.1659C19.9779 11.4369 20.0612 11.7058 20.2318 11.9137C20.4024 12.1216 20.6463 12.2516 20.91 12.2751H20.99C21.2404 12.2762 21.482 12.1807 21.6671 12.0077C21.8523 11.8347 21.9675 11.5966 21.99 11.3405C21.99 11.1043 21.99 10.8578 21.99 10.6216C21.9901 8.44432 21.1486 6.35605 19.6504 4.81551C18.1523 3.27496 16.12 2.40812 14 2.4054ZM16 10.6216C16 10.894 16.1054 11.1552 16.2929 11.3478C16.4805 11.5404 16.7348 11.6486 17 11.6486C17.2653 11.6486 17.5196 11.5404 17.7072 11.3478C17.8947 11.1552 18 10.894 18 10.6216C18 9.53208 17.5786 8.48717 16.8285 7.71675C16.0783 6.94633 15.0609 6.51351 14 6.51351C13.7348 6.51351 13.4805 6.62172 13.2929 6.81432C13.1054 7.00693 13 7.26815 13 7.54054C13 7.81292 13.1054 8.07415 13.2929 8.26676C13.4805 8.45936 13.7348 8.56756 14 8.56756C14.5305 8.56756 15.0392 8.78397 15.4143 9.16918C15.7893 9.55439 16 10.0769 16 10.6216Z" fill="#1B2559"></path>
+                            </svg>
+                        </span>
+                        <input type="number" placeholder="Jūsų telefono numeris" class="focus:border-grey-600 placeholder:text-dark-grey-500 border-grey-500 text-dark-grey-900 flex w-full grow items-center rounded-2xl border border-solid py-4 pl-10 pr-8 text-sm font-medium outline-none placeholder:text-sm placeholder:font-medium" />
+                    </div>
+
+                    <div class="relative flex w-full items-center">
+                        <span class="absolute ml-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25 25" fill="none">
+                                <path d="M11 2.05405C9.02219 2.05405 7.08879 2.65639 5.4443 3.7849C3.79981 4.91341 2.51809 6.51741 1.76121 8.39405C1.00433 10.2707 0.806299 12.3357 1.19215 14.3279C1.578 16.3202 2.53041 18.1502 3.92894 19.5865C5.32746 21.0228 7.10929 22.001 9.0491 22.3972C10.9889 22.7935 12.9996 22.5901 14.8268 21.8128C16.6541 21.0355 18.2159 19.7191 19.3147 18.0302C20.4135 16.3412 21 14.3556 21 12.3243C21 10.9756 20.7413 9.6401 20.2388 8.39405C19.7363 7.14801 18.9997 6.01582 18.0711 5.06214C17.1425 4.10846 16.0401 3.35195 14.8268 2.83582C13.6136 2.3197 12.3132 2.05405 11 2.05405ZM11 20.5405C9.41775 20.5405 7.87104 20.0587 6.55544 19.1558C5.23985 18.253 4.21447 16.9698 3.60897 15.4685C3.00347 13.9672 2.84504 12.3152 3.15372 10.7214C3.4624 9.12762 4.22433 7.66363 5.34315 6.51457C6.46197 5.36552 7.88743 4.583 9.43928 4.26597C10.9911 3.94895 12.5997 4.11166 14.0615 4.73352C15.5233 5.35539 16.7727 6.40848 17.6518 7.75963C18.5308 9.11078 19 10.6993 19 12.3243C19 14.5034 18.1572 16.5932 16.6569 18.1341C15.1566 19.6749 13.1217 20.5405 11 20.5405ZM14.1 12.9713L12 11.7286V7.18918C12 6.9168 11.8946 6.65557 11.7071 6.46296C11.5196 6.27036 11.2652 6.16215 11 6.16215C10.7348 6.16215 10.4804 6.27036 10.2929 6.46296C10.1054 6.65557 10 6.9168 10 7.18918V12.3243C10 12.3243 10 12.4065 10 12.4476C10.0059 12.5183 10.0228 12.5877 10.05 12.653C10.0706 12.7139 10.0974 12.7724 10.13 12.8276C10.1574 12.8859 10.1909 12.941 10.23 12.9919L10.39 13.1254L10.48 13.2178L13.08 14.7584C13.2324 14.8471 13.4048 14.8931 13.58 14.8919C13.8014 14.8935 14.0171 14.8195 14.1932 14.6817C14.3693 14.5438 14.4959 14.3499 14.5531 14.1302C14.6103 13.9105 14.5948 13.6775 14.5092 13.4678C14.4236 13.2581 14.2726 13.0835 14.08 12.9713H14.1Z" fill="#1B2559"></path>
+                            </svg>
+                        </span>
+                        <input type="text" placeholder="Patogus skambučio laikas?" class="focus:border-grey-600 placeholder:text-dark-grey-500 border-grey-500 text-dark-grey-900 flex w-full grow items-center rounded-2xl border border-solid py-4 pl-10 pr-8 text-sm font-medium outline-none placeholder:text-sm placeholder:font-medium" />
+                    </div>
+                    <button class="hover:bg-purple-blue-600 focus:ring-purple-blue-100 border-purple-blue-500 bg-purple-blue-500 flex items-center justify-center rounded-2xl border px-8 py-4 text-sm font-bold text-white transition duration-300 focus:ring-4">Siųsti</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
