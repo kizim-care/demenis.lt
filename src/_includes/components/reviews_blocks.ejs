@@ -1,0 +1,59 @@
+<?
+    let peopleList = [
+        {
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/0NjCQqLG6JiFHKJn6T4vb8I8pR344PWbdumaD3lW.webp',
+            name: 'Arvydas Sabonis',
+            description: 'Lietuvos',
+        },
+        {
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/EguUGLLNuFwuznPG51HjOonGoMoD84LKZa0rLnVh.webp',
+            name: 'Jonas Kazlauskas',
+            description: 'Žinomas ir tituluotas Lietuvos krepšinio treneris',
+        },
+        {
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/QOzxzi1GV9jTEpVLB1XB3aogOz2RjqvgdCW4ItvZ.webp',
+            name: 'Aleksandras Kosauskas',
+            description: 'Ilgametis „Žalgirio“ fizinio parengimo treneris',
+        },
+        {
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/q1S74s3UsSQoeQ6AKmeHsycSQIg5XuEKbxhv4oMf.webp',
+            name: 'Antanas Sireika',
+            description: 'Žinomas ir tituluotas Lietuvos krepšinio treneris',
+        },
+        {
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/x3qqnIHBIphaB28vIziq3QGNdhTKFx6Yrot2it5C.webp',
+            name: 'Robertas Narkus',
+            description: 'Ilgametis „Žalgirio” ir Lietuvos vyrų krepšinio rinktinės sporto medicinos gydytojas',
+        },
+        {
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/GGzfsiGHK47rGuVRgov1mGsi8xA4flSpyPQgstEd.webp',
+            name: 'Žydrūnas Savickas',
+            description: 'Lietuvos sportininkas galiūnas, tituluojamas stipriausiu pasaulio žmogumi',
+        }
+    ];
+?>
+
+<div class="w-full py-40 bg-[#f8f9fa]">
+    <div class="container mx-auto flex flex-col gap-14">
+        <div class="flex w-full flex-col items-center text-center gap-8">
+            <?-
+                include('./single/h2.ejs', {text: 'Garsių kolegų rekomendacijos'});
+            ?>
+            <p class="text-dark-grey-500 font-normal md:w-7/12">Deimantą Demenį rekomenduoja buvę garsūs kolegos ir darbdaviai su garbinga reputacija</p>
+        </div>
+        <div class="grid w-full grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <? peopleList.forEach(function(person, index){ ?>
+                <div class="shadow-main flex flex-col items-center gap-4 rounded-3xl bg-white p-6">
+                    <div
+                        class="h-24 w-24 rounded-full bg-cover bg-center"
+                        style="background-image: url('<?- person.image ?>');"
+                    ></div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-dark-grey-900 font-display text-center text-xl font-extrabold leading-normal"><?- person.name ?></h3>
+                        <p class="text-dark-grey-500 text-center"><?- person.description ?></p>
+                    </div>
+                </div>
+            <? }); ?>
+        </div>
+    </div>
+</div>
