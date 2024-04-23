@@ -1,0 +1,128 @@
+<?
+    let reviewList = [
+        {
+            text: 'Trys savaitės, dešimt masažų, -4 kg, dingo gelbėjimosi ratas nuo liemens, išryškėjo juosmuo. Buvau skeptiškai nusiteikęs, kad galima pasiekti tokius rezultatus. Didelis ačiū Deimantui, tikras specialistas, rekomenduoju.',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/H5rjxG2n3XfFitiupWUGnqCpbIA6kKXgVu7Bmr6N.webp',
+            name: 'Viktorija Nugaraitė',
+            source: 'Facebook rekomendacija',
+        },
+        {
+            text: 'Tikrai profesionalus ir veiksmingas masažas, atpalaiduotas kaklas, dingęs galvos skausmas, pagražintos kūno formos (turiu pripažinti tai, nors visiškai netikėjau! Nuostabus specialistas, darantis stebuklus. Džiaugiuosi, kad atradau Jus.',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/2M9C549rWbODyn1J5czQMXoJFFxkujSj1bunVrHH.webp',
+            name: 'Rosita V.',
+            source: 'Facebook rekomendacija',
+        },
+        {
+            text: 'Masažuotojas vertas pačių geriausių įvertinimų. Per trumpą laiką, masažų ir rekomenduotų pratimų pagalba, labai pagražėjo kūno linijos. Ačiū.',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/IkJvNDfrhYuDydXEiqb6HeMHZlamAKYybRaCkV8i.webp',
+            name: 'Jūratė Panovienė',
+            source: 'Facebook rekomendacija',
+        },
+        {
+            text: 'Geriausias masažuotojas. rekomenduoju!',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/qCNwIqsoFQxvX5xG1Fqjc4glIfClDQZfyqOprJth.webp',
+            name: 'Domilė Panovaitė',
+            source: 'Facebook rekomendacija',
+        },
+        {
+            text: 'Geras specialistas, žino savo darbą. Rekomenduoju! 100%',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/1dlcvK1Nw2duG1U6g1TsoTucPcu4P0dHrWjwOKZw.webp',
+            name: 'Pajūrio Elektrikas',
+            source: 'Facebook rekomendacija',
+        },
+        {
+            text: 'Rekomenduoju! Puikus savo srities specialistas!',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/YKmZVQnVS77MaE5IsrmJvBAt1MPKyUc7BxcsbLu8.webp',
+            name: 'Jūratė Čeponytė',
+            source: 'Facebook atsiliepimas',
+        },
+        {
+            text: 'Labai rekomenduoju išbandyti Deimanto masažus, ypač moterims, turinčioms antsvorį. Stiprūs masažai, patarimai mitybos klausimais, motyvacija jau padėjo per gana trumpą laiką atsikratyti 14 kg, pasikeitė kūno formos, susinormalizavo kraujo spaudimas, pagerėjo skydliaukės darbas. AČIŪ!',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/FwztqfDSV9MxCcvJX8qVW5HnMi8o7zyAPsuvi36p.webp',
+            name: 'Aušra Valinčiūtė',
+            source: 'Facebook rekomendacija',
+        },
+        {
+            text: 'Liuks, nes labai senai buvote, o po dviračių sezono 🚲, kelių sąnariukams jau reikia techninio remonto 😄 Po vasaros dviračių sezono profilaktikos sąnariams reikėtų jau ir mūsų mieste 🚲. Ar planuojate? O Jūs, tikrai profesionalas savo srityje. Patikrinta, rekomenduoju 👍',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/EyaOClblZKbUd0u54AS963RJUiiyqb2jDog4joxq.webp',
+            name: 'Daiva Čiegienė',
+            source: 'Facebook atsiliepimas',
+        },
+        {
+            text: 'Nuostabus masažo meno meistras, 110%... Teko patirti ir dar patirtčiau šio profesionalo technikas, jei gyvenčiau Lietuvoje... Būkite sveiki, gyvuokite ir klestėkite, Deimantai 💕🤩👏👏👏.',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/EZZVgGP8xaUiBNc6QIbSAT5NH3zI2YzCK7wGdxK9.webp',
+            name: 'Miglė Pumputytė-Šalkauskienė',
+            source: 'Facebook atsiliepimas',
+        },
+        {
+            text: 'Tikrai puikus specialistas, daug metų dirba. Tai puikus specialistas, galite pasitikėti, nes pati naudojausi ir labai puikus kaip žmogus.',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/gNzfjKSjF8sWO8pGS8vWETdCEQ9n1u3gbzJZ0nWn.webp',
+            name: 'Elytė Rimkienė',
+            source: 'Facebook atsiliepimas',
+        },
+        {
+            text: 'Labai nuostabus specialistas, nuoširdus Ačiū Jums Deimantai. Rekomenduoju, norint gyventi be skausmo🤩👍👌💎',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/GhkH80YTTrsvHVrmDOZnvLxtYPPV4zNnTbG4KxtC.webp',
+            name: 'Zita Čeliauskė',
+            source: 'Facebook atsiliepimas',
+        },
+        {
+            text: 'Liudiju. Deimanto masažas, be jokių abejonių, paveikus. Man taip pat labai padėjo.',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/1dlcvK1Nw2duG1U6g1TsoTucPcu4P0dHrWjwOKZw.webp',
+            name: 'Asta Bielskienė',
+            source: 'Facebook atsiliepimas',
+        },
+        {
+            text: 'Deimantas Demenis yra puikus masažuotojas.',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/zpJuXpxEyjCUKN1W0a5S9suS5ovJZJsSmSQCT11t.webp',
+            name: 'Šarūnė S.',
+            source: 'Facebook atsiliepimas',
+        },
+        {
+            text: 'Sutinku, kad Deimantas puikus masažuotojas ir tikrai rekomenduoju.',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/i1FssSll9DEdi7OlAL1LxwH2sgW4SvtggVwUQzg9.webp',
+            name: 'Lina Klimavičienė',
+            source: 'Facebook atsiliepimas',
+        },
+        {
+            text: 'Didelis like 👍',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/WUPQon6wAN7iRR9Bm5s3DSJGeZAanVgO7Lh0v16h.webp',
+            name: 'Valmantas A.',
+            source: 'Facebook atsiliepimas',
+        },
+    ];
+?>
+
+<div class="container mx-auto my-40 flex flex-col gap-16">
+    <div class="mx-auto mb-2 flex w-3/4 flex-col items-center gap-y-8 text-center">
+        <?-
+            include('./single/h2.ejs', {text: 'Privačių klientų įvertinimai'});
+        ?>
+        <p class="text-dark-grey-500 mb-5 text-lg font-medium">Pagarba ir profesionalus meistro dėmesys garantuojami kiekvienam žmogui nepriklausomai nuo jo socialinės padėties</p>
+    </div>
+    <div class="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <? reviewList.forEach(function(review, index){ ?>
+            <div class="bg-grey-200 flex w-full flex-col items-start gap-4 rounded-3xl p-8">
+                <div class="flex flex-row items-center gap-1">
+                    <? for ($i = 0; $i < 5; $i++) { ?>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M8.55696 14.5196L12.707 17.0296C13.467 17.4896 14.397 16.8096 14.197 15.9496L13.097 11.2296L16.767 8.04958C17.437 7.46958 17.077 6.36958 16.197 6.29958L11.367 5.88958L9.47696 1.42958C9.13696 0.619583 7.97696 0.619583 7.63696 1.42958L5.74696 5.87958L0.916957 6.28958C0.0369575 6.35958 -0.323043 7.45958 0.346957 8.03958L4.01696 11.2196L2.91696 15.9396C2.71696 16.7996 3.64696 17.4796 4.40696 17.0196L8.55696 14.5196Z" fill="#FFB547"></path>
+                            </svg>
+                        </span>
+                    <? } ?>
+                </div>
+                <p class="text-dark-grey-900 text-lg font-bold">„<?- review.text ?>”</p>
+                <div class="flex flex-row items-center gap-2">
+                <div class="relative h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                    <img src="<?- review.image ?>" class="absolute left-0 top-0 h-full w-full object-cover" alt="avatar" />
+                </div>
+                <div class="flex flex-col items-start">
+                    <h3 class="text-dark-grey-900 font-display text-base font-bold leading-7"><?- review.name ?></h3>
+                    <p class="text-dark-grey-500 text-xs font-semibold leading-normal"><?- review.source ?></p>
+                </div>
+                </div>
+            </div>
+        <? }); ?>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<?
+    let shortServices = [
+        'Galva',
+        'Veidas',
+        'Krūtinė',
+        'Pečiai',
+        'Kaklas',
+        'Nugara',
+        'Stuburas',
+        'Sąnariai',
+        'Šonkauliai',
+        'Juosmuo',
+        'Pilvas',
+        'Rankos',
+        'Alkūnės',
+        'Sėdmenys',
+        'Kojos',
+        'Keliai',
+        'Blauzdos',
+        'Pėdos',
+    ];
+
+    let serviceList = [
+        {
+            title: 'Galvos ir veido masažas',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/1wlWFe1ZRWfYgYqVPdewXrnUOQanmIN7Qpx9fbSk.webp',
+        },
+        {
+            title: 'Nugaros ir stuburo masažas',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/XboJnecyiTgCjV83l97X6mZ0bJOPimAHt6hPzuZP.webp',
+        },
+        {
+            title: 'Kaklo ir pečių masažas',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/lj7m5gBOBUBbjCXJGGyFoSwP3xvwRNE1Gd95gg1k.webp',
+        },
+        {
+            title: 'Pilvo ir juosmens masažas',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/M6hIGm9eCNPGRWGj0jEIU0iGwYbULCpV84YQJ3cz.webp',
+        },
+        {
+            title: 'Krūtinės raumenų ir šonkaulių masažas',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/q3gvqaPyDU3dNIWxZbcyYeJGTpp8S4SEsqEoApSt.webp',
+        },
+        {
+            title: 'Rankų ir alkūnių masažas',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/9eYwRTqYX0qSHdXNTsfaYMRd4IHMsVhJRMXaFkSs.webp',
+        },
+        {
+            title: 'Kojų ir kelių masažas',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/xuvJkAEazG2uh5FBf0KpmPC2DLV9zGu68QOMgOBN.webp',
+        },
+        {
+            title: 'Sėdmenų ir blauzdų masažas',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/stsnlKunKVL3L2zpyaASZaHDKnJaPCWNpouFu1Tb.webp',
+        },
+        {
+            title: 'Kulnų ir pėdų masžas',
+            image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/OqekmrkLKam0WkGYdzmraaDTynOlNnPSZpYOj9xW.webp',
+        },
+    ];
+?>
+
+<div class="w-full bg-[#f8f9fa] py-40">
+    <div class="container mx-auto flex flex-col gap-14">
+        <div class="flex w-full flex-col items-center text-center gap-8">
+            <?-
+                include('./single/h2.ejs', {text: 'Masažuojamos visos kūno vietos'});
+            ?>
+
+            <ul class="text-dark-grey-500 grid grid-cols-2 md:grid-cols-6 gap-x-4 gap-y-1 text-left font-normal">
+                <? shortServices.forEach(function(service, index){ ?>
+                    <li>• <?- service ?></li>
+                <? }); ?>
+            </ul>
+        </div>
+        <div class="grid w-full grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <? serviceList.forEach(function(service, index){ ?>
+                <div class="flex w-full flex-col items-center gap-6 rounded-3xl p-6">
+                    <div class="h-60 md:h-96 w-full rounded-3xl bg-cover bg-center" style="background-image: url('<?- service.image ?>');"></div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-dark-grey-900 font-display text-center text-2xl font-bold"><?- service.title ?></h3>
+                    </div>
+                </div>
+            <? }); ?>
+        </div>
+    </div>
+</div>

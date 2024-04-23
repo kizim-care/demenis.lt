@@ -4,15 +4,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "public/favicon": "/" });
   eleventyConfig.addWatchTarget("src/css/");
 
+  eleventyConfig.setEjsOptions({
+		delimiter: "?",
+	});
+
   return {
     dir: {
       input: "src",
       includes: "_includes",
       output: "_site",
     },
-    templateFormats: ["md", "njk", "html"],
-    markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
+    templateFormats: ["md", "ejs", "html"],
+    markdownTemplateEngine: "ejs",
+    htmlTemplateEngine: "ejs",
+    dataTemplateEngine: "ejs",
   };
 };

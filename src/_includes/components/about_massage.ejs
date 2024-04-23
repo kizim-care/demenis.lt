@@ -1,0 +1,69 @@
+<?
+    let aboutItems = [
+        {
+            icon: 'https://loopple.s3.eu-west-3.amazonaws.com/images/LiGZofq3c1Tbw1RQzxZ4jYbRn6RVYlInRr9MdgTz.png',
+            title: 'Atpalaiduojantis antistresinis masažas',
+            description: 'Šio masažo tikslas yra pagerinti kraujotaką, sumažinti raumenų įtempimą ir atpalaiduoti kūną bei protą bei pagerinti Jūsų bendrą savijautą.',
+        },
+        {
+            icon: 'https://loopple.s3.eu-west-3.amazonaws.com/images/9JLhen7a1x6szArMo1pyKWCtcJb3Eer2lqiQmDLx.png',
+            title: 'Sveikatinantis ir gydomasis masažas',
+            description: 'Ši masažo forma, skirta gydyti įvairias fizinės sveikatos problemas ir traumas, palengvinti skausmą, pagerinti judrumą bei pagreitinti Jūsų gijimo procesą.',
+        },
+        {
+            icon: 'https://loopple.s3.eu-west-3.amazonaws.com/images/MorqqOB92RcAf4t08MoLWAu0p3pKs6GL4PKbi8D8.png',
+            title: 'Reabilitacinis masažas po traumų ar operacijų',
+            description: 'Šis masažas atliekamas kaip dalis Jūsų išsamios reabilitacijos programos, kurios tikslas – padėti Jums atkurti normalų kūno judrumą ir funkcionalumą.',
+        },
+        {
+            icon: 'https://loopple.s3.eu-west-3.amazonaws.com/images/5TACvd7CDHMcZLm79eAqoT6xBb3SMy14zoE4KLhj.png',
+            title: 'Sportinis masažas skirtas atletams',
+            description: 'Ši masažo forma, skirta atletams ir fizinio aktyvumo mėgėjams, siekiant pagerinti jų sportinę veiklą, pasirengimą ir atsistatymą po intensyvių treniruočių ar varžybų.',
+        },
+        {
+            icon: 'https://loopple.s3.eu-west-3.amazonaws.com/images/J3A9j47iKBBsMZaygKSJmzeGuXxcHgbHFPh5amcG.png',
+            title: 'Limfodrenažinis masažas rankomis',
+            description: 'Masažo technika, kuria siekiama skatinti limfos nutekėjimą iš audinių, sumažinti patinimus, pagerinti kraujotaką ir limfos cirkuliaciją bei stiprinti Jūsų imuninę sistemą.',
+        },
+        {
+            icon: 'https://loopple.s3.eu-west-3.amazonaws.com/images/gcunl7ASE0SYAHSxl4PXo5E5KSWdcLfl3CvGl790.png',
+            title: 'Liekninamasis fitneso masažas',
+            description: 'Specializuota masažo forma ir technika, kuri skirta skatinti riebalų deginimą, gerinti odos išvaizdą, formuoti kūno linijas ir padėti pasiekti Jums liekną figūrą.',
+        },
+    ];
+?>
+
+<div class="container mx-auto py-40" id="apie-masazus">
+    <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center gap-8">
+            <?-
+                include('./single/h2.ejs', {text: 'Atliekamų masažų kategorijos'});
+            ?>
+
+            <p class="md:text-lg text-center lg:w-7/12 text-grey-700">
+                Deimantas Demenis atlieka įvairių tipų, paskirčių ir metodų masažus,
+                todėl drąsiai kreipkitės ir pasakokite, kokio būtent masažo ieškote
+                Jūs
+            </p>
+        </div>
+        <div class="grid grid-cols-1 gap-10 mt-20 lg:grid-cols-3 md:grid-cols-2">
+            <? aboutItems.forEach(function(item, index){ ?>
+                <div class="flex flex-col items-center col-span-1 gap-6 px-10 py-8 bg-white shadow-main rounded-3xl">
+                    <div>
+                        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-purple-blue-500">
+                            <img src="<?- item.icon ?>" alt="<?- item.title ?>" class="w-8 h-8"/>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 px-2 text-center">
+                        <h4 class="text-xl md:text-2xl font-extrabold text-dark-grey-900 font-display">
+                            <?- item.title ?>
+                        </h4>
+                        <p class="text-grey-700 text-sm lg:text-base">
+                            <?- item.description ?>
+                        </p>
+                    </div>
+                </div>
+            <? }); ?>
+        </div>
+    </div>
+</div>

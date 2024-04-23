@@ -1,0 +1,43 @@
+<?
+    let couponItems = [
+        'Galite rinktis bet kurią norimą sumą nuo €49',
+        'Kuponas išsiunčiamas PDF formatu Jūsų nurodytu el. pašto adresu',
+        'Įsigytą el. kuponą iš karto galėsite persiųsti kitam žmogui',
+        'Kuponą galima naudoti bet kuriam paslaugų pasiūlymui',
+        'Galioja net 6 mėnesius (180 kalendorinių dienų)',
+        'Prasminga dovana ir patirtis rūpimam žmogui',
+        'Užsakymą galite pateikti, palikdami užklausą',
+    ];
+?>
+
+<div class="w-full py-32">
+    <div class="container z-30 mx-auto my-8 flex flex-col gap-y-8 md:flex-row items-center gap-x-16">
+        <div class="flex h-full w-full flex-col gap-y-4 lg:w-1/2" style="padding: 20px">
+            <div class="mb-4">
+                <?-
+                    include('./single/h2.ejs', {text: 'Vardiniai el. dovanų kuponai nuo €49'});
+                ?>
+            </div>
+
+            <? couponItems.forEach(function(item, index){ ?>
+                <div class="flex flex-row items-center gap-3">
+                    <span class="bg-purple-blue-500 flex h-5 w-5 items-center justify-center rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <path d="M15.5917 6.50828C15.5142 6.43017 15.4221 6.36818 15.3205 6.32587C15.219 6.28356 15.11 6.26178 15 6.26178C14.89 6.26178 14.7811 6.28356 14.6796 6.32587C14.578 6.36818 14.4858 6.43017 14.4084 6.50828L8.20004 12.7249L5.59171 10.1083C5.51127 10.0306 5.41632 9.96948 5.31227 9.92848C5.20823 9.88748 5.09713 9.86737 4.98531 9.8693C4.87349 9.87124 4.76315 9.89518 4.66058 9.93976C4.55802 9.98433 4.46524 10.0487 4.38754 10.1291C4.30984 10.2095 4.24875 10.3045 4.20774 10.4085C4.16674 10.5126 4.14663 10.6237 4.14856 10.7355C4.1505 10.8473 4.17444 10.9577 4.21902 11.0602C4.2636 11.1628 4.32794 11.2556 4.40837 11.3333L7.60837 14.5333C7.68584 14.6114 7.77801 14.6734 7.87956 14.7157C7.98111 14.758 8.09003 14.7798 8.20004 14.7798C8.31005 14.7798 8.41897 14.758 8.52052 14.7157C8.62207 14.6734 8.71424 14.6114 8.79171 14.5333L15.5917 7.73328C15.6763 7.65524 15.7438 7.56053 15.79 7.45512C15.8361 7.3497 15.86 7.23586 15.86 7.12078C15.86 7.00569 15.8361 6.89186 15.79 6.78644C15.7438 6.68102 15.6763 6.58631 15.5917 6.50828Z" fill="white"></path>
+                        </svg>
+                    </span>
+                    <p class="text-dark-grey-600 text-base font-medium leading-7"><?- item ?></p>
+                </div>
+            <? }); ?>
+
+            <div class="pt-2">
+                <a href="#uzsakymo-forma">
+                    <button class="border-purple-blue-500 bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-purple-blue-100 flex items-center rounded-2xl border px-7 py-4 text-sm font-bold text-white transition duration-300 focus:ring-4">Pateikti užklausą</button>
+                </a>
+            </div>
+        </div>
+        <div class="md:w-1/2 items-center justify-center overflow-hidden rounded-3xl lg:flex">
+            <img class="w-full object-fill" src="https://loopple.s3.eu-west-3.amazonaws.com/images/egVfp5avL8rzg2TI1z3zA7BRrKJ3OPYuw3wldfPI.webp" alt="" />
+        </div>
+    </div>
+</div>
