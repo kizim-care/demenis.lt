@@ -5,6 +5,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "public/favicon": "/" });
   eleventyConfig.addWatchTarget("src/css/");
 
+  eleventyConfig.addGlobalData("cssVersion", Date.now());
+
   eleventyConfig.setEjsOptions({
 		delimiter: "?",
 	});
