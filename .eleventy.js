@@ -4,11 +4,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "public/favicon": "/" });
   eleventyConfig.addWatchTarget("src/css/");
 
-  // eleventyConfig.setNunjucksEnvironmentOptions({
-	// 	throwOnUndefined: true,
-	// 	autoescape: false,
-	// });
-
   eleventyConfig.setEjsOptions({
 		delimiter: "?",
 	});
