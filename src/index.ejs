@@ -23,12 +23,14 @@ meta_title: "Unikalūs Deimanto Demenio masažai"
 
 <?- include('./_includes/components/about_massage.ejs'); ?>
 
-<?- include(
-    './_includes/components/form_phone.ejs',
-    {
-        title: 'Kokio masažo reikia Jūsų atveju?',
-    }
-); ?>
+<div id="uzsakymo-forma">
+    <?- include(
+        './_includes/components/form_phone.ejs',
+        {
+            title: 'Kokio masažo reikia Jūsų atveju?',
+        }
+    ); ?>
+</div>
 
 <?- include('./_includes/components/trust.ejs'); ?>
 
@@ -67,3 +69,5 @@ meta_title: "Unikalūs Deimanto Demenio masažai"
 <?- include('./_includes/components/faq.ejs'); ?>
 
 <?- include('./_includes/components/form_footer.ejs'); ?>
+
+<?- include('./_includes/components/footer.ejs'); ?>
