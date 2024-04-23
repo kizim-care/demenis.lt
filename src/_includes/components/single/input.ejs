@@ -1,0 +1,14 @@
+<input
+    class="
+        <? if (typeof withIcon !== 'undefined' && withIcon === true) { ?>
+            pl-10
+        <? } ?>
+        placeholder:text-dark-grey-500 border-grey-500 focus:border-grey-600 w-full rounded-xl border border-solid p-4 outline-none placeholder:text-sm placeholder:font-medium
+    "
+    placeholder="<?= placeholder ?>"
+    type="<?= type ?>"
+
+    <? if (typeof id !== 'undefined') { ?>
+        id="<?= id ?>"
+    <? } ?>
+/>
