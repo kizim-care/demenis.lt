@@ -18,4 +18,11 @@
     <body class="font-body">
         <?- content ?>
     </body>
+    <script>
+        let emailReplace = document.querySelectorAll('.email-replace');
+
+        emailReplace.forEach(function (item) {
+            item.innerHTML = item.innerHTML.replace(/_at_/g, '@').replace(/_dot_/g, '.');
+        });
+    </script>
 </html>
