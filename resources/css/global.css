@@ -21,6 +21,9 @@
   .bg-purple-blue-700 {
     @apply bg-indigo-700;
   }
+  .text-grey-700 {
+    @apply text-neutral-700;
+  }
   .text-dark-grey-500 {
     @apply text-neutral-500;
   }

@@ -1,70 +1,70 @@
-<? let aboutItems = [
-    {
-        number: '25+',
-        title: 'metai patirties',
-        description: 'Virš 25+ metų tobulina savo unikalią masažų metodiką',
-    },
-    {
-        number: '5,000+',
-        title: 'išmasažuotų žmonių',
-        description: 'Klientai — nuo paprastų iki garsiausių Lietuvos žmonių',
-    },
-    {
-        number: '20,000+',
-        title: 'atliktų unikalių masažų',
-        description: 'Kuklus meistras, nustojęs skaičiuoti po 200-ojo masažo',
-    },
-    {
-        number: '1999-ųjų',
-        title: 'Eurolygos čempionas',
-        description: 'Finale gelbėjo savo masažu Tyusą Edney, kai jam sutraukė presą',
-    },
-    {
-        number: 'Nuo €49',
-        title: 'įvadinio masažo kaina',
-        description: 'Čempioniškos kokybės masažai už prieinamą kainą jau nuo €49',
-    },
-    {
-        number: '100%',
-        title: 'kokybės garantija',
-        description: 'Suteikiama pinigų grąžinimo garantija, jei masažas nepatiks',
-    },
-]; ?>
+<?
+    let aboutItems = [
+        {
+            number: '25+',
+            title: 'metai patirties',
+            description: 'Virš 25+ metų tobulina savo unikalią masažų metodiką',
+        },
+        {
+            number: '5,000+',
+            title: 'išmasažuotų žmonių',
+            description: 'Klientai — nuo paprastų iki garsiausių Lietuvos žmonių',
+        },
+        {
+            number: '20,000+',
+            title: 'atliktų unikalių masažų',
+            description: 'Kuklus meistras, nustojęs skaičiuoti po 200-ojo masažo',
+        },
+        {
+            number: '1999-ųjų',
+            title: 'Eurolygos čempionas',
+            description: 'Finale gelbėjo savo masažu Tyusą Edney, kai jam sutraukė presą',
+        },
+        {
+            number: 'Nuo €49',
+            title: 'įvadinio masažo kaina',
+            description: 'Čempioniškos kokybės masažai už prieinamą kainą jau nuo €49',
+        },
+        {
+            number: '100%',
+            title: 'kokybės garantija',
+            description: 'Suteikiama pinigų grąžinimo garantija, jei masažas nepatiks',
+        },
+    ];
+?>
 
 <div class="w-full py-8 bg-[#f8f9fa]" id="apie-masazuotoja">
     <div class="container flex flex-col items-center gap-16 mx-auto my-32">
-        <div class="grid w-full grid-cols-1 gap-32 lg:grid-cols-2">
+        <div class="grid w-full grid-cols-1 gap-16 lg:gap-32 lg:grid-cols-2">
             <div class="flex flex-col gap-16">
-                <div class="flex flex-col gap-2 text-center lg:text-start">
-                    <h2 class="text-3xl font-extrabold md:text-5xl text-dark-grey-900 font-display mb-2">
-                        Apie masažų meistrą
-                    </h2>
+                <div class="flex flex-col gap-8 text-center lg:text-start">
+                    <?-
+                        include('./single/h2.ejs', {text: 'Apie masažų meistrą'});
+                    ?>
+
                     <p class="text-base font-medium leading-7 text-dark-grey-600">
                         Deimantas Demenis — buvęs ilgametis krepšinio klubo „Žalgirio“
                         masažuotojas, dabar gydantis savo masažais privačių klientų kūną
                         ir sielą
                     </p>
                 </div>
-            <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-10">
-                <? aboutItems.forEach(function(item, index){ ?>
-                    <div class="flex flex-col md:items-start items-center gap-1">
-                        <h3 class="text-4xl font-extrabold leading-tight text-purple-blue-500 font-display">
-                            <?- item.number ?>
-                        </h3>
-                        <h3 class="text-base font-bold leading-tight text-dark-grey-900 font-display mb-2">
-                            <?- item.title ?>
-                        </h3>
-                        <p class="text-base leading-7 text-dark-grey-600">
-                            <?- item.description ?>
-                        </p>
-                    </div>
-                <? }); ?>
+                <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-y-12 lg:gap-y-16 gap-x-10">
+                    <? aboutItems.forEach(function(item, index){ ?>
+                        <div class="flex flex-col md:items-start items-center gap-1 text-center md:text-start">
+                            <h3 class="text-3xl lg:text-4xl font-extrabold leading-tight text-purple-blue-500 font-display">
+                                <?- item.number ?>
+                            </h3>
+                            <h3 class="text-base font-bold leading-tight text-dark-grey-900 font-display mb-2">
+                                <?- item.title ?>
+                            </h3>
+                            <p class="text-base leading-7 text-dark-grey-600">
+                                <?- item.description ?>
+                            </p>
+                        </div>
+                    <? }); ?>
+                </div>
             </div>
-            </div>
-            <div class="bg-cover hidden lg:block rounded-3xl" style="
-                background-image: url('https://loopple.s3.eu-west-3.amazonaws.com/images/dMWW2BlZwC32TjditH4gOkUvo8bWoW3AT6Ju8ufI.png');
-                height: 750px;
-            "></div>
+            <div class="bg-cover h-96 lg:h-auto rounded-3xl lg:bg-center bg-[url('https://loopple.s3.eu-west-3.amazonaws.com/images/dMWW2BlZwC32TjditH4gOkUvo8bWoW3AT6Ju8ufI.png')]"></div>
         </div>
     </div>
 </div>
