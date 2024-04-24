@@ -1,4 +1,4 @@
-<? let brandIcons = [
+<% let brandIcons = [
     {
         img: 'https://loopple.s3.eu-west-3.amazonaws.com/images/oZSyMNLDtR2XQMI5fEJJC29nNdr9JLDCUvBu1a1f.svg',
         alt: '15 minuciu apie Deimanta Demeni',
@@ -15,25 +15,25 @@
         img: 'https://loopple.s3.eu-west-3.amazonaws.com/images/MiQqopSzaYFoXcVfzY6epJ0AWZlA0OdfPZriHAMH.svg',
         alt: 'Deimanto Demenio kvalifikacija',
     },
-]; ?>
+]; %>
 
 <div class="w-full py-28">
     <div class="container flex flex-col items-center gap-8 mx-auto text-center" id="patirtis-ir-istorija">
-        <?-
+        <%-
             include('./single/h2.ejs', {text: 'Ilgametė masažavimo patirtis ir istorija'});
-        ?>
+        %>
         <p class="text-base font-medium leading-7 text-dark-grey-600">
             Masažai atliekami pagal unikalią Deimanto Demenio metodiką su 25 metų
             tobulinimo istorija
         </p>
         <div class="flex flex-wrap items-center xl:justify-between justify-center w-full gap-8 xl:flex-nowrap opacity-70">
-            <? brandIcons.forEach(function(icon){ ?>
+            <% brandIcons.forEach(function(icon){ %>
                 <div class="bg-grey-200 rounded-2xl max-w-60 xl:max-w-72">
                     <a href="#interviu">
-                        <img src="<?- icon.img ?>" alt="<?- icon.alt ?>" />
+                        <img src="<%- icon.img %>" alt="<%- icon.alt %>" />
                     </a>
                 </div>
-            <? }); ?>
+            <% }); %>
         </div>
     </div>
 </div>

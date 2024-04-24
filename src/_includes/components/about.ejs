@@ -1,4 +1,4 @@
-<?
+<%
     let aboutItems = [
         {
             number: '25+',
@@ -31,16 +31,16 @@
             description: 'Suteikiama pinigų grąžinimo garantija, jei masažas nepatiks',
         },
     ];
-?>
+%>
 
 <div class="w-full py-28 bg-[#f8f9fa]" id="apie-masazuotoja">
     <div class="container flex flex-col items-center gap-16 mx-auto">
         <div class="grid w-full grid-cols-1 gap-16 lg:gap-32 lg:grid-cols-2">
             <div class="flex flex-col gap-16">
                 <div class="flex flex-col gap-8 text-center lg:text-start">
-                    <?-
+                    <%-
                         include('./single/h2.ejs', {text: 'Apie masažų meistrą'});
-                    ?>
+                    %>
 
                     <p class="text-base font-medium leading-7 text-dark-grey-600">
                         Deimantas Demenis — buvęs ilgametis krepšinio klubo „Žalgirio“
@@ -49,19 +49,19 @@
                     </p>
                 </div>
                 <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-y-12 lg:gap-y-16 gap-x-10">
-                    <? aboutItems.forEach(function(item, index){ ?>
+                    <% aboutItems.forEach(function(item, index){ %>
                         <div class="flex flex-col md:items-start items-center gap-1 text-center md:text-start">
                             <h3 class="text-3xl lg:text-4xl font-extrabold leading-tight text-purple-blue-500 font-display">
-                                <?- item.number ?>
+                                <%- item.number %>
                             </h3>
                             <h3 class="text-base font-bold leading-tight text-dark-grey-900 font-display mb-2">
-                                <?- item.title ?>
+                                <%- item.title %>
                             </h3>
                             <p class="text-base leading-7 text-dark-grey-600">
-                                <?- item.description ?>
+                                <%- item.description %>
                             </p>
                         </div>
-                    <? }); ?>
+                    <% }); %>
                 </div>
             </div>
             <div class="bg-cover h-96 lg:h-auto rounded-3xl lg:bg-center bg-[url('https://loopple.s3.eu-west-3.amazonaws.com/images/dMWW2BlZwC32TjditH4gOkUvo8bWoW3AT6Ju8ufI.png')]"></div>

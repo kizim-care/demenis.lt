@@ -1,4 +1,4 @@
-<?
+<%
     let aboutItems = [
         {
             icon: 'https://loopple.s3.eu-west-3.amazonaws.com/images/LiGZofq3c1Tbw1RQzxZ4jYbRn6RVYlInRr9MdgTz.png',
@@ -31,14 +31,14 @@
             description: 'Specializuota masažo forma ir technika, kuri skirta skatinti riebalų deginimą, gerinti odos išvaizdą, formuoti kūno linijas ir padėti pasiekti Jums liekną figūrą.',
         },
     ];
-?>
+%>
 
 <div class="container mx-auto py-28" id="apie-masazus">
     <div class="flex flex-col items-center justify-center">
         <div class="flex flex-col items-center justify-center gap-8">
-            <?-
+            <%-
                 include('./single/h2.ejs', {text: 'Atliekamų masažų kategorijos'});
-            ?>
+            %>
 
             <p class="md:text-lg text-center lg:w-7/12 text-grey-700">
                 Deimantas Demenis atlieka įvairių tipų, paskirčių ir metodų masažus,
@@ -47,23 +47,23 @@
             </p>
         </div>
         <div class="grid grid-cols-1 gap-10 mt-20 lg:grid-cols-3 md:grid-cols-2">
-            <? aboutItems.forEach(function(item, index){ ?>
+            <% aboutItems.forEach(function(item, index){ %>
                 <div class="flex flex-col items-center col-span-1 gap-6 px-10 py-8 bg-white shadow-main rounded-3xl">
                     <div>
                         <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-purple-blue-500">
-                            <img src="<?- item.icon ?>" alt="<?- item.title ?>" class="w-8 h-8"/>
+                            <img src="<%- item.icon %>" alt="<%- item.title %>" class="w-8 h-8"/>
                         </div>
                     </div>
                     <div class="flex flex-col gap-4 px-2 text-center">
                         <h4 class="text-xl md:text-2xl font-extrabold text-dark-grey-900 font-display">
-                            <?- item.title ?>
+                            <%- item.title %>
                         </h4>
                         <p class="text-grey-700 text-sm lg:text-base">
-                            <?- item.description ?>
+                            <%- item.description %>
                         </p>
                     </div>
                 </div>
-            <? }); ?>
+            <% }); %>
         </div>
     </div>
 </div>

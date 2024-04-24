@@ -1,4 +1,4 @@
-<?
+<%
     let faqList = [
         {
             question: 'Kokiame mieste atliekate masažus?',
@@ -29,19 +29,19 @@
                 <p>Kokio masažo reikia Jūsų atveju? Drąsiai pildykite užklausą bei bendraukite su mano asistentais</p>`,
         }
     ];
-?>
+%>
 
 <div class="w-full py-28">
     <div class="container mx-auto flex flex-col items-center gap-16" id="klausimai">
         <div class="flex w-8/12 flex-col gap-8 text-center">
-            <?-
+            <%-
                 include('./single/h2.ejs', {text: 'Deimantas Demenis atsako į Jūsų klausimus'});
-            ?>
+            %>
             <p class="text-dark-grey-600 text-base font-medium leading-7">Dažniausiai užduodami klientų klausimai ir atsakymai į juos</p>
         </div>
 
         <div class="flex max-w-5xl flex-col gap-5">
-            <? faqList.forEach(function(item, index){ ?>
+            <% faqList.forEach(function(item, index){ %>
                 <div onclick="(() => { this.classList.toggle('open')})()" class="bg-grey-100 group flex cursor-pointer select-none items-center justify-between gap-6 self-stretch rounded-2xl px-8 py-10">
                     <span class="bg-purple-blue-500 md:flex h-12 w-12 shrink-0 items-center justify-center rounded-full hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-white">
@@ -49,10 +49,10 @@
                         </svg>
                     </span>
                     <div class="flex flex-grow flex-col items-start gap-2">
-                        <h3 class="text-dark-grey-900 font-display text-xl font-extrabold"><?- item.question ?></h3>
+                        <h3 class="text-dark-grey-900 font-display text-xl font-extrabold"><%- item.question %></h3>
                         <div class="flex max-h-0 flex-grow-0 flex-col text-dark-grey-600 leading-7 text-sm md:text-base
                             items-start gap-2 overflow-hidden transition-all group-[.open]:max-h-[800px] md:group-[.open]:max-h-72">
-                            <?- item.answer ?>
+                            <%- item.answer %>
                         </div>
                     </div>
                     <a class="rotate-180 transition-all duration-200 ease-in-out group-[.open]:rotate-0" href="javascript:void(0)">
@@ -61,7 +61,7 @@
                         </svg>
                     </a>
                 </div>
-            <? }); ?>
+            <% }); %>
         </div>
     </div>
 </div>

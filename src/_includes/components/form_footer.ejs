@@ -3,9 +3,9 @@
         <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
             <div class="flex flex-col gap-16">
                 <div class="mx-auto flex w-10/12 flex-col gap-8 text-center md:ml-0 md:text-start">
-                    <?-
+                    <%-
                         include('./single/h2.ejs', {text: 'Norite užduoti savo klausimą?'});
-                    ?>
+                    %>
                     <p class="text-dark-grey-600 text-base font-medium leading-7">Drąsiai siųskite savo klausimus Deimanto Demenio asistentams, kurie atsakys į visus Jums rūpimus klausimus arba perduos juos tiesiogiai masažų meistrui</p>
                 </div>
                 <div class="grid w-full md:grid-cols-2 gap-x-5 gap-y-16">
@@ -52,30 +52,30 @@
                 <form class="flex flex-col gap-6">
                     <label class="text-dark-grey-700 flex flex-col gap-2 text-sm font-medium" for="first-name">
                         Jūsų vardas
-                        <?-
+                        <%-
                             include('./single/input.ejs', {
                                 placeholder: 'Įveskite Jūsų vardą',
                                 type: 'text',
                                 id: 'first-name',
                             });
-                        ?>
+                        %>
                     </label>
                     <label class="text-dark-grey-700 flex flex-col gap-2 text-sm font-medium" for="email">
                         Jūsų el. pašto adresas
-                        <?-
+                        <%-
                             include('./single/input.ejs', {
                                 placeholder: 'Įveskite Jūsų el. pašto adresą',
                                 type: 'email',
                                 id: 'email',
                             });
-                        ?>
+                        %>
                     </label>
                     <label class="text-dark-grey-700 flex flex-col gap-2 text-sm font-medium" for="message">
                         Jūsų žinutės tekstas
                         <textarea rows="5" class="placeholder:text-neutral-400 border-grey-500 focus:border-indigo-300 focus:ring-4 ring-indigo-200 rounded-xl border border-solid p-4 outline-none placeholder:text-sm placeholder:font-medium" placeholder="Įveskite Jūsų žinutės tekstą" id="message"></textarea>
                     </label>
 
-                    <?- include('./single/button.ejs'); ?>
+                    <%- include('./single/button.ejs'); %>
                 </form>
             </div>
         </div>

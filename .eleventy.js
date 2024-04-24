@@ -7,10 +7,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addGlobalData("cssVersion", Date.now());
 
-  eleventyConfig.setEjsOptions({
-		delimiter: "?",
-	});
-
   return {
     dir: {
       input: "src",

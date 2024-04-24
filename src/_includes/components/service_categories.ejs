@@ -1,4 +1,4 @@
-<?
+<%
     let shortServices = [
         'Galva',
         'Veidas',
@@ -58,30 +58,30 @@
             image: 'https://loopple.s3.eu-west-3.amazonaws.com/images/OqekmrkLKam0WkGYdzmraaDTynOlNnPSZpYOj9xW.webp',
         },
     ];
-?>
+%>
 
 <div class="w-full bg-[#f8f9fa] py-28">
     <div class="container mx-auto flex flex-col gap-14">
         <div class="flex w-full flex-col items-center text-center gap-8">
-            <?-
+            <%-
                 include('./single/h2.ejs', {text: 'Masažuojamos visos kūno vietos'});
-            ?>
+            %>
 
             <ul class="text-dark-grey-500 grid grid-cols-2 md:grid-cols-6 gap-x-4 gap-y-1 text-left font-normal">
-                <? shortServices.forEach(function(service, index){ ?>
-                    <li>• <?- service ?></li>
-                <? }); ?>
+                <% shortServices.forEach(function(service, index){ %>
+                    <li>• <%- service %></li>
+                <% }); %>
             </ul>
         </div>
         <div class="grid w-full grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-            <? serviceList.forEach(function(service, index){ ?>
+            <% serviceList.forEach(function(service, index){ %>
                 <div class="flex w-full flex-col items-center gap-6 rounded-3xl p-6">
-                    <div class="h-60 md:h-96 w-full rounded-3xl bg-cover bg-center" style="background-image: url('<?- service.image ?>');"></div>
+                    <div class="h-60 md:h-96 w-full rounded-3xl bg-cover bg-center" style="background-image: url('<%- service.image %>');"></div>
                     <div class="flex flex-col items-center">
-                        <h3 class="text-dark-grey-900 font-display text-center text-2xl font-bold"><?- service.title ?></h3>
+                        <h3 class="text-dark-grey-900 font-display text-center text-2xl font-bold"><%- service.title %></h3>
                     </div>
                 </div>
-            <? }); ?>
+            <% }); %>
         </div>
     </div>
 </div>
