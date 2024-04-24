@@ -26,6 +26,8 @@ jobs:
           npm install
           npm run build
           npm run build:css
+        env:
+          APP_ENV: ${{ secrets.APP_ENV }}
 
       - name: Copy output.css to _site directory
         run: cp src/css/output.css _site/css/
