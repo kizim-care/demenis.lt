@@ -6,10 +6,11 @@ const isProduction = process.env.APP_ENV === 'production';
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
-  eleventyConfig.addPassthroughCopy("src/assets/");
-  eleventyConfig.addPassthroughCopy("src/css/");
+  eleventyConfig.addPassthroughCopy({ "resources/js": "/js" });
   eleventyConfig.addPassthroughCopy({ "public/favicon": "/" });
-  eleventyConfig.addWatchTarget("src/css/");
+
+  eleventyConfig.addWatchTarget("resources/js/*");
+
 
   eleventyConfig.addGlobalData("cachVersion", Date.now());
 

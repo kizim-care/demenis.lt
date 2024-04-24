@@ -54,6 +54,7 @@
                         Jūsų vardas
                         <%-
                             include('./single/input.ejs', {
+                                name: 'name',
                                 placeholder: 'Įveskite Jūsų vardą',
                                 type: 'text',
                                 id: 'first-name',
@@ -64,6 +65,7 @@
                         Jūsų el. pašto adresas
                         <%-
                             include('./single/input.ejs', {
+                                name: 'email',
                                 placeholder: 'Įveskite Jūsų el. pašto adresą',
                                 type: 'email',
                                 id: 'email',
@@ -72,7 +74,7 @@
                     </label>
                     <label class="text-dark-grey-700 flex flex-col gap-2 text-sm font-medium" for="message">
                         Jūsų žinutės tekstas
-                        <textarea rows="5" class="placeholder:text-neutral-400 border-grey-500 focus:border-indigo-300 focus:ring-4 ring-indigo-200 rounded-xl border border-solid p-4 outline-none placeholder:text-sm placeholder:font-medium" placeholder="Įveskite Jūsų žinutės tekstą" id="message"></textarea>
+                        <textarea name="message" rows="5" class="placeholder:text-neutral-400 border-grey-500 focus:border-indigo-300 focus:ring-4 ring-indigo-200 rounded-xl border border-solid p-4 outline-none placeholder:text-sm placeholder:font-medium" placeholder="Įveskite Jūsų žinutės tekstą" id="message"></textarea>
                     </label>
 
                     <%- include('./single/button.ejs'); %>
