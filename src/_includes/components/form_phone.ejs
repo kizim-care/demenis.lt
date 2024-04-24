@@ -85,6 +85,14 @@
                                     type: 'submit',
                                 });
                             %>
+
+                            <div id="success-<%- randomFormId %>" class="hidden bg-emerald-100 py-2 px-3 rounded-md text-emerald-700 text-sm">
+                                Užklausa išsiųsta. Susisieksime su Jumis per 24 valandas.
+                            </div>
+
+                            <div id="fail-<%- randomFormId %>" class="hidden bg-rose-100 py-2 px-3 rounded-md text-rose-700 text-sm">
+                                Įvyko klaida, perkraukite puslapį ir bandykite dar kartą.
+                            </div>
                     </div>
                 </form>
             </div>

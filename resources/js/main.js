@@ -16,7 +16,7 @@ function submitPhoneForm(formId) {
         return;
     }
 
-    let button = form.querySelector('button[type="submit"]');
+    const button = form.querySelector('button[type="submit"]');
     const originalButtonText = button.innerText;
 
     button.innerText = 'Siunčiama...';
@@ -26,13 +26,21 @@ function submitPhoneForm(formId) {
     xhr.open('POST', 'https://play.svix.com/in/e_p3scfTB9MAzwrl7pPVvWynIU5LP/', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function () {
+        let notificationType = '';
+
         if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 204)) {
-            alert('Užklausa išsiųsta');
+            notificationType = 'success';
+
             form.reset();
         }
 
         if (xhr.status !== 200 && xhr.status !== 204) {
-            alert('Įvyko klaida, perkraukite puslapį ir bandykite dar kartą');
+            notificationType = 'fail';
+        }
+
+        if (notificationType !== '') {
+            let notification = document.getElementById(notificationType + '-' + formId);
+            notification.classList.remove('hidden');
         }
 
         button.innerHTML = originalButtonText;
