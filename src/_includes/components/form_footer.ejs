@@ -49,13 +49,13 @@
             </div>
             <div class="shadow-main flex flex-col gap-5 rounded-3xl bg-white p-10">
                 <h3 class="text-dark-grey-900 font-display text-2xl font-bold">Drąsiai klauskite</h3>
-                <form class="flex flex-col gap-6">
+                <form id="footer-form" onsubmit="event.preventDefault(); submitFooterForm();" class="flex flex-col gap-6">
                     <label class="text-dark-grey-700 flex flex-col gap-2 text-sm font-medium" for="first-name">
                         Jūsų vardas
                         <%-
                             include('./single/input.ejs', {
                                 name: 'name',
-                                placeholder: 'Įveskite Jūsų vardą',
+                                placeholder: 'Įveskite savo vardą',
                                 type: 'text',
                                 id: 'first-name',
                             });
@@ -66,18 +66,41 @@
                         <%-
                             include('./single/input.ejs', {
                                 name: 'email',
-                                placeholder: 'Įveskite Jūsų el. pašto adresą',
+                                placeholder: 'Įveskite savo el. pašto adresą',
                                 type: 'email',
                                 id: 'email',
                             });
                         %>
                     </label>
+                    <label class="text-dark-grey-700 flex flex-col gap-2 text-sm font-medium" for="email">
+                        Jūsų telefono numeris
+                        <%-
+                            include('./single/input.ejs', {
+                                name: 'phone',
+                                placeholder: 'Įveskite savo telefono numerį',
+                                type: 'number',
+                                id: 'phone',
+                            });
+                        %>
+                    </label>
                     <label class="text-dark-grey-700 flex flex-col gap-2 text-sm font-medium" for="message">
                         Jūsų žinutės tekstas
-                        <textarea name="message" rows="5" class="placeholder:text-neutral-400 border-grey-500 focus:border-indigo-300 focus:ring-4 ring-indigo-200 rounded-xl border border-solid p-4 outline-none placeholder:text-sm placeholder:font-medium" placeholder="Įveskite Jūsų žinutės tekstą" id="message"></textarea>
+                        <textarea name="message" rows="5" class="placeholder:text-neutral-400 border-grey-500 focus:border-indigo-300 focus:ring-4 ring-indigo-200 rounded-xl border border-solid p-4 outline-none placeholder:text-sm placeholder:font-medium" placeholder="Įveskite žinutės tekstą" id="message"></textarea>
                     </label>
 
-                    <%- include('./single/button.ejs'); %>
+                    <%-
+                        include('./single/button.ejs', {
+                            type: 'submit',
+                        });
+                    %>
+
+                    <div id="success-footer-form" class="hidden bg-emerald-100 py-2 px-3 rounded-md text-emerald-700 text-sm">
+                        Užklausa išsiųsta. Susisieksime su Jumis per 24 valandas.
+                    </div>
+
+                    <div id="fail-footer-form" class="hidden bg-rose-100 py-2 px-3 rounded-md text-rose-700 text-sm">
+                        Įvyko klaida, perkraukite puslapį ir bandykite dar kartą.
+                    </div>
                 </form>
             </div>
         </div>
