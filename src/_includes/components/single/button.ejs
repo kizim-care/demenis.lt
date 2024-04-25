@@ -1,1 +1,14 @@
-<button class="hover:bg-purple-blue-600 focus:ring-purple-blue-100 border-purple-blue-500 bg-purple-blue-500 flex items-center justify-center rounded-2xl border px-8 py-4 text-sm font-bold text-white transition duration-300 focus:ring-4">Siųsti</button>
+<%
+    let selfType = 'button';
+
+    if (typeof type !== 'undefined') {
+        selfType = type;
+    }
+%>
+
+<button
+    type="<%- selfType %>"
+    class="hover:bg-purple-blue-600 focus:ring-purple-blue-100 border-purple-blue-500 bg-purple-blue-500 flex items-center justify-center rounded-2xl border px-8 py-4 text-sm font-bold text-white transition duration-300 focus:ring-4"
+>
+    Siųsti
+</button>

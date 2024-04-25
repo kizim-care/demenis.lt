@@ -23,6 +23,7 @@
     <body class="font-body">
         <%- content %>
     </body>
+    <script src="/js/main.js?v=<%= cachVersion %>"></script>
     <script>
         if (typeof emailReplace === 'undefined') {
             var emailReplace = document.querySelectorAll('.email-replace');
