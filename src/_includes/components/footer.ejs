@@ -1,3 +1,36 @@
+<%
+    let selfMenuItems = [
+        {
+            href: '#pradzia',
+            text: 'Į pradžią'
+        },
+        {
+            href: '#apie-masazuotoja',
+            text: 'Apie masažuotoją'
+        },
+        {
+            href: '#apie-masazus',
+            text: 'Apie masažą'
+        },
+        {
+            href: '#klientai-ir-atsiliepimai',
+            text: 'Atsiliepimai'
+        },
+        {
+            href: '#masazu-kaina',
+            text: 'Kaina'
+        },
+        {
+            href: '#klausimai',
+            text: 'Klausimai'
+        }
+    ];
+
+    if (typeof menuItems !== 'undefined') {
+        selfMenuItems = menuItems;
+    };
+%>
+
 <div class="w-full py-28">
     <div class="container mx-auto flex flex-col">
         <div class="flex w-full flex-col items-center">
@@ -6,13 +39,11 @@
             </span>
             <div class="mb-8 flex flex-col items-center gap-6">
                 <div class="text-dark-grey-900 flex flex-wrap items-center justify-center gap-5 gap-y-3 lg:flex-nowrap lg:gap-12">
-                    <a href="#pradzia" class="text-gray-600 hover:text-gray-900">Į pradžią</a>
-                    <a href="#apie-masazuotoja" class="text-gray-600 hover:text-gray-900">Apie masažuotoją</a>
-                    <a href="#apie-masazus" class="text-gray-600 hover:text-gray-900">Apie masažą</a>
-                    <a href="#klientai-ir-atsiliepimai" class="text-gray-600 hover:text-gray-900">Atsiliepimai</a>
-                    <a href="#masazu-kaina" class="text-gray-600 hover:text-gray-900">Kaina</a>
-                    <a href="#klausimai" class="text-gray-600 hover:text-gray-900">Klausimai</a>
-                    <a href="#uzsakymo-forma" class="text-gray-600 hover:text-gray-900">Registruotis masažui</a>
+                    <% selfMenuItems.forEach((item) => { %>
+                        <a href="<%= item.href %>" class="text-gray-600 hover:text-gray-900">
+                            <%= item.text %>
+                        </a>
+                    <% }); %>
                 </div>
                 <div class="flex items-center gap-8">
                     <a href="https://kizim.lt/skirta-kineziterapeutams" target="_blank" class="text-grey-700 hover:text-grey-900">

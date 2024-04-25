@@ -1,0 +1,102 @@
+---
+layout: layout.ejs
+meta_title: "Jūsų užklausa sėkmingai išsiųsta"
+meta_description: "Masažą Jums atliks vienas geriausiai vertinamų masažuotojų Lietuvoje 🇱🇹 — ilgametis „Žalgirio“ krepšinio klubo masažuotojas ir eurolygos čempionas Deimantas Demenis"
+ogImage: "https://kizim-lt.b-cdn.net/demenis.lt/demenis-og-image.png"
+---
+<%
+    let menuItems = [
+        {
+            href: '#patvirtinimas',
+            text: 'Patvirtinimas'
+        },
+        {
+            href: '#more-info',
+            text: 'Daugiau informacijos'
+        },
+        {
+            href: '#interviu',
+            text: 'Interviu su meistru'
+        }
+    ];
+%>
+
+<%-
+    include('./_includes/components/menu_top.ejs', {
+        logoLink: '/',
+        menuItems: menuItems,
+        desktopButton: {
+            text: 'Grįžti į pradžią',
+            url: '/'
+        },
+        mobileButtons: [
+            {
+                text: 'Grįžti į pradžią',
+                url: '/',
+                type: 'primary'
+            }
+        ],
+    });
+%>
+
+
+<div class="container flex flex-col mx-auto pb-24" id="patvirtinimas">
+    <div class="grid w-full grid-cols-1 my-auto mt-12 mb-8 md:grid-cols-2 xl:gap-14 gap-16 md:gap-5">
+        <div class="flex flex-col justify-center col-span-1 text-start">
+
+            <h1 class="mb-8 text-4xl font-extrabold leading-tight lg:text-6xl text-dark-grey-900 font-display flex gap-8 lg:gap-4 items-center">
+                <span class="text-purple-blue-500 lg:text-5xl">✓</span>
+                <span>Sėkmingai išsiųsta</span>
+            </h1>
+
+            <div class="flex flex-col items-left justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full shrink-0 bg-purple-blue-500">
+                        <span class="text-base font-bold leading-7 text-white">1</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-base font-bold leading-7 text-dark-grey-900 font-display">Pirmas žingsnis atliktas</h3>
+                        <p class="text-base font-medium leading-7 text-dark-grey-600">Sėkmingai gavome Jūsų kontaktinį telefono numerį, kuriuo su Jumis susisieksime</p>
+                    </div>
+                </div>
+                <div class="flex items-left self-start justify-center w-6 h-10 border-r-2 border-purple-blue-500"></div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center justify-center w-12 h-12 bg-transparent border-2 border-solid rounded-full shrink-0 text-purple-blue-500 border-purple-blue-500">
+                        <span class="text-base font-bold leading-7">2</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-base font-bold leading-7 text-dark-grey-900 font-display">Kada gausite skambutį?</h3>
+                        <p class="text-base font-medium leading-7 text-dark-grey-600">Gausite mūsų skambutį Jūsų nurodytu patogiu metu • Darbo laiku nuo 09:00 iki 18:00 • Darbo dienomis nuo pirmadienio iki penktadienio</p>
+                    </div>
+                </div>
+                <div class="flex items-left self-start justify-center w-6 h-10 border-r-2 border-dark-grey-500"></div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center justify-center w-12 h-12 bg-transparent border-2 border-solid rounded-full shrink-0 text-purple-blue-500 border-purple-blue-500">
+                        <span class="text-base font-bold leading-7">3</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-base font-bold leading-7 text-dark-grey-900 font-display">Aptarsime pageidaujamą masažą</h3>
+                        <p class="text-base font-medium leading-7 text-dark-grey-600">Aptarsime, kokio masažo Jums reikia, atsakysime į rūpimus klausimus, užregistruosime vizitui</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="items-center justify-end col-span-1 flex">
+            <img class="rounded-md" src="https://kizim-lt.b-cdn.net/demenis.lt/t0fktcO8rs0d2SlBoqs2wLc40YJEXW3lld8cdYfS.png" alt="header image">
+        </div>
+    </div>
+</div>
+
+<div id="more-info">
+    <%- include('./_includes/components/form_footer.ejs', {title: 'Norite užduoti papildomą klausimą el. paštu?'}); %>
+</div>
+
+<%-
+    include('./_includes/components/quote.ejs', {
+        img: 'https://kizim-lt.b-cdn.net/demenis.lt/AaC7ri8KZwxasJ66PIJxpHy6O01EM5m1XZOIefDq.png',
+    });
+%>
+
+<%-
+    include('./_includes/components/footer.ejs', {menuItems: menuItems});
+%>

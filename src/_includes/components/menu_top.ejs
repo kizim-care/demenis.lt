@@ -1,5 +1,7 @@
 <%
-    let menuItems = [
+    let selfLogoLink = '#pradzia';
+
+    let selfMenuItems = [
         {
             href: '#pradzia',
             text: 'Į pradžią'
@@ -25,27 +27,61 @@
             text: 'Klausimai'
         }
     ];
+
+    let selfDesktopButton = {
+        text: 'Registruotis masažui',
+        url: '#phone-form-screen-1'
+    };
+
+    let selfMobileButtons = [
+        {
+            text: 'Palikti užklausą',
+            url: '#phone-form-screen-1',
+            type: 'secondary',
+        },
+        {
+            text: 'Registruotis masažui',
+            url: '#phone-form-screen-1',
+            type: 'primary',
+        }
+    ];
+
+    if (typeof logoLink !== 'undefined') {
+        selfLogoLink = logoLink;
+    };
+
+    if (typeof menuItems !== 'undefined') {
+        selfMenuItems = menuItems;
+    };
+
+    if (typeof desktopButton !== 'undefined') {
+        selfDesktopButton = desktopButton;
+    };
+
+    if (typeof mobileButtons !== 'undefined') {
+        selfMobileButtons = mobileButtons;
+    }
 %>
 
 <div class="fixed w-full top-0 left-0 z-50 bg-white shadow-sm">
     <div class="container flex flex-col mx-auto">
         <div class="relative grid gap-5 grid-cols-2 md:grid-cols-3 xl:flex xl:justify-between flex-wrap items-center w-full bg-white group py-5 shrink-0">
             <div>
-                <a href="#pradzia">
+                <a href="<%= selfLogoLink %>">
                     <img class="h-8" src="https://kizim-lt.b-cdn.net/demenis.lt/H9NaypoxCAHej91lMgVOwKQhkmgtwAqFGpwevfJz.svg" />
                 </a>
             </div>
             <div class="items-center justify-between hidden gap-12 text-black xl:flex">
-                <% menuItems.forEach((item) => { %>
+                <% selfMenuItems.forEach((item) => { %>
                     <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="<%= item.href %>">
                         <%= item.text %>
                     </a>
                 <% }) %>
             </div>
             <div class="items-center hidden gap-8 md:flex justify-self-center">
-                <a href="#<%= formScreenId %>">
+                <a href="<%= selfDesktopButton.url %>">
                     <button class="flex items-center px-4 py-2 text-sm font-bold text-white bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 transition duration-300 rounded-xl">
-                        Registruotis masažui
+                        <%= selfDesktopButton.text %>
                     </button>
                 </a>
             </div>
@@ -56,22 +92,24 @@
             </button>
             <div class="absolute flex 2xl:hidden transition-all duration-300 ease-in-out flex-col items-start shadow-main justify-center w-full gap-3 overflow-hidden bg-white max-h-0 group-[.open]:py-6 px-4 group-[.open]:max-h-80 top-full">
                 <div class="flex flex-col items-start mb-6 gap-3">
-                    <% menuItems.forEach((item) => { %>
+                    <% selfMenuItems.forEach((item) => { %>
                         <a onclick="(() => { this.closest('.group').classList.toggle('open')})()" class="text font-normal text-dark-grey-700 hover:text-dark-grey-900" href="<%= item.href %>">
                             <%= item.text %>
                         </a>
                     <% }) %>
 
-                    <a onclick="(() => { this.closest('.group').classList.toggle('open')})()" href="#<%= formScreenId %>">
-                        <button class="flex items-center text font-bold text-dark-grey-700 hover:text-dark-grey-900">
-                            Palikti užklausą
-                        </button>
-                    </a>
-                    <a onclick="(() => { this.closest('.group').classList.toggle('open')})()" href="#<%= formScreenId %>">
-                        <button class="flex items-center px-4 py-2 text-sm font-bold text-white rounded-xl bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 transition duration-300">
-                            Registruotis masažui
-                        </button>
-                    </a>
+                    <% selfMobileButtons.forEach((button) => { %>
+                        <a onclick="(() => { this.closest('.group').classList.toggle('open')})()" href="<%= button.url %>">
+                            <% if (button.type === "secondary") { %>
+                                <button class="flex items-center text font-bold text-dark-grey-700 hover:text-dark-grey-900">
+                            <% } %>
+                            <% if (button.type === "primary") { %>
+                                <button class="flex items-center px-4 py-2 text-sm font-bold text-white bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 transition duration-300 rounded-xl">
+                            <% } %>
+                                <%= button.text %>
+                            </button>
+                        </a>
+                    <% }) %>
                 </div>
             </div>
         </div>

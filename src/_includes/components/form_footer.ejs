@@ -1,10 +1,18 @@
+<%
+    let selfTitle = 'Norite užduoti savo klausimą?';
+
+    if (typeof title !== 'undefined') {
+        selfTitle = title;
+    }
+%>
+
 <div class="w-full bg-[#f8f9fa] py-28">
     <div class="container mx-auto flex flex-col items-center gap-16">
         <div class="grid grid-cols-1 items-starts gap-16 lg:grid-cols-2">
             <div class="flex flex-col gap-16 lg:mt-8">
                 <div class="mx-auto flex w-10/12 flex-col gap-8 text-center md:ml-0 md:text-start">
                     <%-
-                        include('./single/h2.ejs', {text: 'Norite užduoti savo klausimą?'});
+                        include('./single/h2.ejs', {text: selfTitle});
                     %>
                     <p class="text-dark-grey-600 text-base font-medium leading-7">Drąsiai siųskite savo klausimus Deimanto Demenio asistentams, kurie atsakys į visus Jums rūpimus klausimus arba perduos juos tiesiogiai masažų meistrui</p>
                 </div>

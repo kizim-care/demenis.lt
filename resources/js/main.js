@@ -88,16 +88,13 @@ function postRequest(data, form) {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 204)) {
-            showNotification('success', form.id);
-
-            form.reset();
+            window.location.href = '/thank-you/';
         }
 
         if (xhr.status !== 200 && xhr.status !== 204) {
             showNotification('fail', form.id);
+            disableButton(button, false);
         }
-
-        disableButton(button, false);
     };
     xhr.send(JSON.stringify(data));
 }
