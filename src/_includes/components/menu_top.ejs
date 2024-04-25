@@ -43,7 +43,7 @@
                 <% }) %>
             </div>
             <div class="items-center hidden gap-8 md:flex justify-self-center">
-                <a href="#uzsakymo-forma">
+                <a href="#<%= formScreenId %>">
                     <button class="flex items-center px-4 py-2 text-sm font-bold text-white bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 transition duration-300 rounded-xl">
                         Registruotis masažui
                     </button>
@@ -62,12 +62,12 @@
                         </a>
                     <% }) %>
 
-                    <a onclick="(() => { this.closest('.group').classList.toggle('open')})()" href="#uzklausa-kokio-masazo-reikia">
+                    <a onclick="(() => { this.closest('.group').classList.toggle('open')})()" href="#<%= formScreenId %>">
                         <button class="flex items-center text font-bold text-dark-grey-700 hover:text-dark-grey-900">
                             Palikti užklausą
                         </button>
                     </a>
-                    <a onclick="(() => { this.closest('.group').classList.toggle('open')})()" href="#uzsakymo-forma">
+                    <a onclick="(() => { this.closest('.group').classList.toggle('open')})()" href="#<%= formScreenId %>">
                         <button class="flex items-center px-4 py-2 text-sm font-bold text-white rounded-xl bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 transition duration-300">
                             Registruotis masažui
                         </button>

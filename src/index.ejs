@@ -5,7 +5,9 @@ meta_description: "Masažą Jums atliks vienas geriausiai vertinamų masažuotoj
 ogImage: "https://kizim-lt.b-cdn.net/demenis.lt/demenis-og-image.png"
 ---
 
-<%- include('./_includes/components/menu_top.ejs'); %>
+<%-
+    include('./_includes/components/menu_top.ejs', {formScreenId: 'phone-form-screen-1'});
+%>
 
 <%- include(
     './_includes/components/hero.ejs',
@@ -15,7 +17,8 @@ ogImage: "https://kizim-lt.b-cdn.net/demenis.lt/demenis-og-image.png"
         text: `Masažą Jums atliks vienas geriausiai vertinamų masažuotojų
             Lietuvoje 🇱🇹 — ilgametis „Žalgirio“ krepšinio klubo masažuotojas
             ir eurolygos čempionas Deimantas Demenis`,
-        image: 'https://kizim-lt.b-cdn.net/demenis.lt/hero.png'
+        image: 'https://kizim-lt.b-cdn.net/demenis.lt/hero.png',
+        formScreenId: 'phone-form-screen-1',
     }
 ); %>
 
@@ -25,44 +28,53 @@ ogImage: "https://kizim-lt.b-cdn.net/demenis.lt/demenis-og-image.png"
 
 <%- include('./_includes/components/about_massage.ejs'); %>
 
-<div id="uzsakymo-forma">
-    <%- include(
-        './_includes/components/form_phone.ejs',
-        {
-            title: 'Kokio masažo reikia Jūsų atveju?',
-        }
-    ); %>
-</div>
-
-<%- include('./_includes/components/trust.ejs'); %>
-
-<%- include('./_includes/components/service_categories.ejs'); %>
-
-<%- include('./_includes/components/quote.ejs'); %>
-
 <%- include(
     './_includes/components/form_phone.ejs',
     {
-        title: 'Kokiai kūno vietai masažo reikia Jūsų atveju?',
+        title: 'Kokio masažo reikia Jūsų atveju?',
+        id: 'phone-form-screen-1',
     }
 ); %>
 
 <%- include('./_includes/components/trust.ejs'); %>
 
-<%- include('./_includes/components/reviews.ejs'); %>
+<%- include('./_includes/components/service_categories.ejs'); %>
+
+<%-
+    include('./_includes/components/quote.ejs', {formScreenId: 'phone-form-screen-2'});
+%>
+
+<%- include(
+    './_includes/components/form_phone.ejs',
+    {
+        title: 'Kokiai kūno vietai masažo reikia Jūsų atveju?',
+        id: 'phone-form-screen-2',
+    }
+); %>
+
+<%- include('./_includes/components/trust.ejs'); %>
+
+<%-
+    include('./_includes/components/reviews.ejs', {formScreenId: 'phone-form-screen-3'});
+%>
 
 <%- include('./_includes/components/reviews_blocks.ejs'); %>
 
 <%- include('./_includes/components/reviews_customers.ejs'); %>
 
-<%- include('./_includes/components/prices.ejs'); %>
+<%-
+    include('./_includes/components/prices.ejs', {formScreenId: 'phone-form-screen-3'});
+%>
 
-<%- include('./_includes/components/coupon.ejs'); %>
+<%-
+    include('./_includes/components/coupon.ejs', {formScreenId: 'phone-form-screen-3'});
+%>
 
 <%- include(
     './_includes/components/form_phone.ejs',
     {
         title: 'Konsultacijų ir užsakymo forma',
+        id: 'phone-form-screen-3',
     }
 ); %>
 
