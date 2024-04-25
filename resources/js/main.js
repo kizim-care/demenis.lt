@@ -79,8 +79,12 @@ function postRequest(data, form) {
 
     disableButton(button);
 
+    let url = 'https_colon__slash__slash_templid_dot_com_slash_webhooks_slash_31_slash_48dfc66d9734a56c81817dfccc99a683_slash_demenislt';
+
+    url = url.replace(/_colon_/g, ':').replace(/_slash_/g, '/');
+
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://play.svix.com/in/e_p3scfTB9MAzwrl7pPVvWynIU5LP/', true);
+    xhr.open('POST', url.replace(/_dot_/g, '.'), true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 204)) {
