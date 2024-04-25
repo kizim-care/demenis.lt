@@ -80,6 +80,15 @@
                                     });
                                 %>
                             </div>
+                            <div class="hidden invisible">
+                                <%-
+                                    include('./single/input.ejs', {
+                                        name: 'templid',
+                                        placeholder: '',
+                                        type: 'text',
+                                    });
+                                %>
+                            </div>
                             <%-
                                 include('./single/button.ejs', {
                                     type: 'submit',

@@ -88,6 +88,16 @@
                         <textarea name="message" rows="5" class="placeholder:text-neutral-400 border-grey-500 focus:border-indigo-300 focus:ring-4 ring-indigo-200 rounded-xl border border-solid p-4 outline-none placeholder:text-sm placeholder:font-medium" placeholder="Įveskite žinutės tekstą" id="message"></textarea>
                     </label>
 
+                    <div class="hidden invisible">
+                        <%-
+                            include('./single/input.ejs', {
+                                name: 'templid',
+                                placeholder: '',
+                                type: 'text',
+                            });
+                        %>
+                    </div>
+
                     <%-
                         include('./single/button.ejs', {
                             type: 'submit',

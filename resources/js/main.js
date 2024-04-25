@@ -19,6 +19,7 @@ function submitPhoneForm(form) {
     data = {
         phone,
         time,
+        type: 'phone',
     };
 
     postRequest(data, form);
@@ -61,12 +62,19 @@ function submitFooterForm(form) {
         email,
         phone,
         message,
+        type: 'footer',
     };
 
     postRequest(data, form);
 }
 
 function postRequest(data, form) {
+    data.templid = form.querySelector('input[name="templid"]').value;
+
+    if (data.templid === '') {
+        data.templid = 'b157cbcbe3d42815a9c5de15f07d4b02'
+    }
+
     const button = form.querySelector('button[type="submit"]');
 
     disableButton(button);
