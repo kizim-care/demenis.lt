@@ -18,30 +18,12 @@ function submitPhoneForm(formId) {
         return;
     }
 
-    const button = form.querySelector('button[type="submit"]');
-
-    disableButton(button);
-
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://play.svix.com/in/e_p3scfTB9MAzwrl7pPVvWynIU5LP/', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 204)) {
-            showNotification('success', formId);
-
-            form.reset();
-        }
-
-        if (xhr.status !== 200 && xhr.status !== 204) {
-            showNotification('fail', formId);
-        }
-
-        disableButton(button, false);
-    };
-    xhr.send(JSON.stringify({
+    data = {
         phone,
         time,
-    }));
+    };
+
+    postRequest(data, form, formId);
 }
 
 function submitFooterForm() {
@@ -80,8 +62,19 @@ function submitFooterForm() {
         return;
     }
 
+    data = {
+        name,
+        email,
+        phone,
+        message,
+    };
+
+    postRequest(data, form, id);
+}
+
+function postRequest(data, form, id) {
     const button = form.querySelector('button[type="submit"]');
-    
+
     disableButton(button);
 
     const xhr = new XMLHttpRequest();
@@ -100,14 +93,8 @@ function submitFooterForm() {
 
         disableButton(button, false);
     };
-    xhr.send(JSON.stringify({
-        name,
-        email,
-        phone,
-        message,
-    }));
+    xhr.send(JSON.stringify(data));
 }
-
 
 function showNotification(type, id, message = '') {
     let notification = document.getElementById(type + '-' + id);

@@ -1,0 +1,18 @@
+<%
+    let messages = {
+        success: {
+            css: 'bg-emerald-100 text-emerald-700',
+            message: 'Užklausa išsiųsta. Susisieksime su Jumis per 24 darbo valandas.',
+        },
+        fail: {
+            css: 'bg-rose-100 text-rose-700',
+            message: 'Įvyko klaida, perkraukite puslapį ir bandykite dar kartą.',
+        },
+    };
+%>
+
+<% Object.keys(messages).forEach(function(key) { %>
+    <div id="<%- key %>-<%- id %>" class="hidden py-2 px-3 rounded-md text-sm <%- messages[key]['css']  %>">
+        <%- messages[key]['message']  %>
+    </div>
+<% }); %>

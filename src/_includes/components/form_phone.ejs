@@ -13,7 +13,7 @@
         </div>
 
         <div class="items-left mx-auto flex flex-col gap-16 max-w-4xl md:flex-row">
-            <div class="items-left flex flex-col justify-between">
+            <div class="items-left flex flex-col justify-start lg:mt-6">
                 <div class="flex items-center gap-4">
                     <div class="bg-purple-blue-500 flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
                         <span class="text-base font-bold leading-7 text-white">1</span>
@@ -86,13 +86,9 @@
                                 });
                             %>
 
-                            <div id="success-<%- randomFormId %>" class="hidden bg-emerald-100 py-2 px-3 rounded-md text-emerald-700 text-sm">
-                                Užklausa išsiųsta. Susisieksime su Jumis per 24 valandas.
-                            </div>
-
-                            <div id="fail-<%- randomFormId %>" class="hidden bg-rose-100 py-2 px-3 rounded-md text-rose-700 text-sm">
-                                Įvyko klaida, perkraukite puslapį ir bandykite dar kartą.
-                            </div>
+                            <%-
+                                include('./single/form_messages.ejs', {id: randomFormId});
+                            %>
                     </div>
                 </form>
             </div>
