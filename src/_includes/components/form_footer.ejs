@@ -1,7 +1,7 @@
 <div class="w-full bg-[#f8f9fa] py-28">
     <div class="container mx-auto flex flex-col items-center gap-16">
-        <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-            <div class="flex flex-col gap-16">
+        <div class="grid grid-cols-1 items-starts gap-16 lg:grid-cols-2">
+            <div class="flex flex-col gap-16 lg:mt-8">
                 <div class="mx-auto flex w-10/12 flex-col gap-8 text-center md:ml-0 md:text-start">
                     <%-
                         include('./single/h2.ejs', {text: 'Norite užduoti savo klausimą?'});
@@ -49,7 +49,7 @@
             </div>
             <div class="shadow-main flex flex-col gap-5 rounded-3xl bg-white p-10">
                 <h3 class="text-dark-grey-900 font-display text-2xl font-bold">Drąsiai klauskite</h3>
-                <form id="footer-form" onsubmit="event.preventDefault(); submitFooterForm();" class="flex flex-col gap-6">
+                <form id="footer-form" onsubmit="event.preventDefault(); submitFooterForm(this);" class="flex flex-col gap-6">
                     <label class="text-dark-grey-700 flex flex-col gap-2 text-sm font-medium" for="first-name">
                         Jūsų vardas
                         <%-

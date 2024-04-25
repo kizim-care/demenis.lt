@@ -1,19 +1,17 @@
-function submitPhoneForm(formId) {
-    hideAllNotifications(formId);
-
-    const form = document.getElementById(formId);
+function submitPhoneForm(form) {
+    hideAllNotifications(form.id);
 
     const phone = form.querySelector('input[name="phone"]').value;
     const time  = form.querySelector('input[name="time"]').value;
 
     if (!/^(\+3706|86|003706|03706|3706|6|06)\d{7}$/.test(phone)) {
-        showNotification('fail', formId, 'Neteisingas telefono numeris');
+        showNotification('fail', form.id, 'Neteisingas telefono numeris');
 
         return;
     }
 
     if (!time) {
-        showNotification('fail', formId, 'Pasirinkite laiką');
+        showNotification('fail', form.id, 'Pasirinkite laiką');
 
         return;
     }
@@ -23,15 +21,11 @@ function submitPhoneForm(formId) {
         time,
     };
 
-    postRequest(data, form, formId);
+    postRequest(data, form);
 }
 
-function submitFooterForm() {
-    const id = 'footer-form';
-
-    hideAllNotifications(id);
-
-    const form = document.getElementById(id);
+function submitFooterForm(form) {
+    hideAllNotifications(form.id);
 
     const name = form.querySelector('input[name="name"]').value;
     const email = form.querySelector('input[name="email"]').value;
@@ -39,25 +33,25 @@ function submitFooterForm() {
     const message = form.querySelector('textarea[name="message"]').value;
 
     if (!name) {
-        showNotification('fail', id, 'Įveskite vardą');
+        showNotification('fail', form.id, 'Įveskite vardą');
 
         return;
     }
 
     if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-        showNotification('fail', id, 'Įveskite teisingą el. pašto adresą');
+        showNotification('fail', form.id, 'Įveskite teisingą el. pašto adresą');
 
         return;
     }
 
     if (!/^(\+3706|86|003706|03706|3706|6|06)\d{7}$/.test(phone)) {
-        showNotification('fail', id, 'Neteisingas telefono numeris');
+        showNotification('fail', form.id, 'Neteisingas telefono numeris');
 
         return;
     }
 
     if (!message) {
-        showNotification('fail', id, 'Įveskite žinutę');
+        showNotification('fail', form.id, 'Įveskite žinutę');
 
         return;
     }
@@ -69,10 +63,10 @@ function submitFooterForm() {
         message,
     };
 
-    postRequest(data, form, id);
+    postRequest(data, form);
 }
 
-function postRequest(data, form, id) {
+function postRequest(data, form) {
     const button = form.querySelector('button[type="submit"]');
 
     disableButton(button);
@@ -82,13 +76,13 @@ function postRequest(data, form, id) {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 204)) {
-            showNotification('success', id);
+            showNotification('success', form.id);
 
             form.reset();
         }
 
         if (xhr.status !== 200 && xhr.status !== 204) {
-            showNotification('fail', id);
+            showNotification('fail', form.id);
         }
 
         disableButton(button, false);
@@ -116,14 +110,8 @@ function showNotification(type, id, message = '') {
 
 function hideAllNotifications(id) {
     for (let type of ['success', 'fail']) {
-        hideNotification(type, id);
+        document.getElementById(type + '-' + id).classList.add('hidden');
     }
-}
-
-function hideNotification(type, id) {
-    let notification = document.getElementById(type + '-' + id);
-
-    notification.classList.add('hidden');
 }
 
 function disableButton(button, loading = true) {
