@@ -21,7 +21,11 @@
         <link rel="stylesheet" href="/css/output.css?v=<%= cachVersion %>" />
     </head>
     <body class="font-body">
+        <%- include('./components/menu_top.ejs') %>
+
         <%- content %>
+
+        <%- include('./components/footer.ejs') %>
     </body>
     <script src="/js/main.js?v=<%= cachVersion %>"></script>
     <script>
