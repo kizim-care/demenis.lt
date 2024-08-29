@@ -6,6 +6,8 @@ const isProduction = process.env.APP_ENV === 'production';
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
+  
+  eleventyConfig.addPassthroughCopy({ "public/css/custom.css": "/css/custom.css"});
   eleventyConfig.addPassthroughCopy({ "resources/js": "/js" });
   eleventyConfig.addPassthroughCopy({ "public/favicon": "/" });
 
