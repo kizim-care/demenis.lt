@@ -20,6 +20,17 @@
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/output.css?v=<%= cachVersion %>" />
         <link rel="stylesheet" href="/css/custom.css?v=<%= cachVersion %>" />
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BDWDK4HTM"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2BDWDK4HTM');
+        </script>
+
     </head>
     <body class="font-body">
         <%- include('./components/menu_top.ejs') %>
