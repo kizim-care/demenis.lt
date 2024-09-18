@@ -23,6 +23,12 @@ function submitPhoneForm(form) {
     };
 
     postRequest(data, form);
+
+    gtag('event', 'form_submit', {
+        'event_category': 'phone_form',
+        'event_label': 'Phone Consultation Form',
+        'value': 1
+    });
 }
 
 function submitFooterForm(form) {
@@ -66,6 +72,12 @@ function submitFooterForm(form) {
     };
 
     postRequest(data, form);
+
+    gtag('event', 'form_submit', {
+        'event_category': 'footer_form',
+        'event_label': 'Footer Contact Form',
+        'value': 1
+    });
 }
 
 function postRequest(data, form) {
