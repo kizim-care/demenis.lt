@@ -1,0 +1,71 @@
+---
+layout: layout.ejs
+meta_title: "Gydomasis masažas Vilniuje"
+meta_description: "Gydomąjį masažą Jums atliks vienas geriausiai vertinamų masažuotojų Lietuvoje 🇱🇹 — ilgametis „Žalgirio“ krepšinio klubo masažuotojas ir eurolygos čempionas Deimantas Demenis"
+ogImage: "https://kizim-lt.b-cdn.net/demenis.lt/fb-cover.png"
+---
+
+<%- include('./_includes/components/hero.ejs', {
+        title: 'Gydomasis masažas Vilniuje',
+        subtitle: 'Vilniuje • Kaune • Klaipėdoje',
+        text: `Gydomąjį masažą Jums atliks vienas geriausiai vertinamų masažuotojų
+            Lietuvoje 🇱🇹 — ilgametis „Žalgirio“ krepšinio klubo masažuotojas
+            ir eurolygos čempionas Deimantas Demenis`,
+        image: 'https://kizim-lt.b-cdn.net/demenis.lt/hero.png',
+        formScreenId: 'phone-form-screen-1',
+}) %>
+
+<%- include('./_includes/components/brand_icons.ejs'); %>
+
+<%- include('./_includes/components/about.ejs'); %>
+
+<%- include('./_includes/components/about_massage.ejs'); %>
+
+<%- include('./_includes/components/form_phone.ejs', {
+        title: 'Kokio masažo reikia Jūsų atveju?',
+        id: 'phone-form-screen-1',
+}) %>
+
+<%- include('./_includes/components/trust.ejs') %>
+
+<%- include('./_includes/components/service_categories.ejs') %>
+
+<%- include('./_includes/components/quote.ejs', {
+        formScreenId: 'phone-form-screen-2',
+}) %>
+
+<%- include( './_includes/components/form_phone.ejs', {
+        title: 'Kokiai kūno vietai masažo reikia Jūsų atveju?',
+        id: 'phone-form-screen-2',
+}) %>
+
+<%- include('./_includes/components/trust.ejs'); %>
+
+<%- include('./_includes/components/reviews.ejs', {
+        formScreenId: 'phone-form-screen-3',
+}) %>
+
+<%- include('./_includes/components/reviews_blocks.ejs') %>
+
+<%- include('./_includes/components/reviews_customers.ejs') %>
+
+<%- include('./_includes/components/prices.ejs', {
+        formScreenId: 'phone-form-screen-3',
+}) %>
+
+<%- include('./_includes/components/coupon.ejs', {
+        formScreenId: 'phone-form-screen-3',
+}) %>
+
+<%- include('./_includes/components/form_phone.ejs', {
+        title: 'Konsultacijų ir užsakymo forma',
+        id: 'phone-form-screen-3',
+}) %>
+
+<%- include('./_includes/components/trust.ejs') %>
+
+<%- include('./_includes/components/faq.ejs') %>
+
+<%- include('./_includes/components/form_footer.ejs') %>
+
+<%- include('./_includes/components/mobile_button.ejs'); %>
