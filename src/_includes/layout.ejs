@@ -21,16 +21,31 @@
         <link rel="stylesheet" href="/css/output.css?v=<%= cachVersion %>" />
         <link rel="stylesheet" href="/css/custom.css?v=<%= cachVersion %>" />
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BDWDK4HTM"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { window.dataLayer.push(arguments) }
 
-        gtag('config', 'G-2BDWDK4HTM');
+            var cookieData = JSON.parse(localStorage.getItem('cc_cookie')) || {};
+
+            consentData = cookieData.data || {};
+
+            var defaultConsent = {
+                analytics_storage: consentData['analytics_storage'] || 'denied',
+                ad_storage: consentData['ad_storage'] || 'denied',
+                ad_user_data: consentData['ad_user_data'] || 'denied',
+                ad_personalization: consentData['ad_personalization'] || 'denied',
+                functionality_storage: consentData['functionality_storage'] || 'denied',
+                security_storage: consentData['security_storage'] || 'denied',
+            };
+
+            gtag('consent', 'default', defaultConsent);
+
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KB52CJCX');
         </script>
-
     </head>
     <body class="font-body">
         <%- include('./components/menu_top.ejs') %>
